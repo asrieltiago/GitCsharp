@@ -26,11 +26,11 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
                     DesalocarUmLivro();
 
                 opcaoMenu = MenuPrincipal();
-            }            
+            }
 
-                Console.Clear();
-                MostrarSejaBemVindo();
-                Console.WriteLine("Volte sempre!");
+            Console.Clear();
+            MostrarSejaBemVindo();
+            Console.WriteLine("Volte sempre!");
 
             Console.ReadKey();
         }
@@ -88,7 +88,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
         /// </summary>
         /// <param name="nomeDoLivro">Nome do livro a ser pesquisado</param>
         /// <returns>Retorna verdadeiro caso o livro esteja livre para a locação, senão, retorna como falso.</returns>
-        public static bool? PesquisaLivroParaAlocacao(string nomeDoLivro)
+        public static bool? PesquisaLivroParaAlocacao(ref string nomeDoLivro)
         {
             for (int i = 0; i < baseDeLivros.GetLength(0); i++) // GetLength(0) # 0 é a primeira coluna do banco de dados
             {
@@ -105,12 +105,12 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
             Console.WriteLine("Digite o número da opção desejada: Sim (1) | Não (2)");
             int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
 
-            if(opcao == 1)
+            if (opcao == 1)
             {
                 Console.WriteLine("Digite o nome do livro a ser pesquisado:");
                 nomeDoLivro = Console.ReadLine();
 
-                return PesquisaLivroParaAlocacao(nomeDoLivro);
+                return PesquisaLivroParaAlocacao(ref nomeDoLivro);
             }
             return null;
         }
@@ -130,7 +130,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
 
             Console.Clear();
             MostrarSejaBemVindo();
-            Console.WriteLine("LIVRO ATUALIZADO COM SUCESSO!\r\n");
+            Console.WriteLine("LISTAGEM ATUALIZADA COM SUCESSO!\r\n");
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
             MostrarMenuInicialLivros("Locar um livro: ");
 
             var nomeDoLivro = Console.ReadLine();
-            var resultadoPesquisa = PesquisaLivroParaAlocacao(nomeDoLivro);
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(ref nomeDoLivro);
 
             if (resultadoPesquisa != null && resultadoPesquisa == true) // se o resultado da pesquisa for diferente de NULL e igual a TRUE;
             {
@@ -159,7 +159,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
                 Console.WriteLine("Pressione Qualquer tecla para retornar ao Menu Principal.");
             }
 
-            if(resultadoPesquisa == null)
+            if (resultadoPesquisa == null)
             {
                 Console.WriteLine("Livro não localizado");
                 Console.WriteLine("Pressione Qualquer tecla para retornar ao Menu Principal.");
@@ -190,7 +190,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
             MostrarListaDeLivros();
 
             var nomeDoLivro = Console.ReadLine();
-            var resultadoPesquisa = PesquisaLivroParaAlocacao(nomeDoLivro);
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(ref nomeDoLivro);
 
             if (resultadoPesquisa != null && resultadoPesquisa == false) // se o usuário não preencher corretamente, o livro não poderá ser alocado. 
             {
@@ -227,7 +227,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
 
             return false;
 
-            
+
         }
     }
 }

@@ -26,8 +26,8 @@ namespace SistemaAlocação
                 if (opcaoMenu == 2)
                     DevolverUmaReliquia();
 
-                if (opcaoMenu == 3) 
-                    Lista();                
+                if (opcaoMenu == 3)
+                    Lista();
 
                 opcaoMenu = MenuPrincipal();
             }
@@ -94,19 +94,33 @@ namespace SistemaAlocação
         /// </summary>
         /// <param name="nomeDaReliquia">Nome do veiculo a ser pesquisado.</param>
         /// <returns>Retorna verdadeiro caso o veiculo esteja disponivel para locação, senão, retorna como falso.</returns>
-        public static bool PesquisaReliquiaParaLocacao(string nomeDaReliquia)
+        public static bool? PesquisaReliquiaParaLocacao(string nomeDaReliquia)
         {
             for (int i = 0; i < baseDeReliquias.GetLength(0); i++)
             {
-                if (nomeDaReliquia == baseDeReliquias[i, 0])
+                if (CompararReliquia(nomeDaReliquia, baseDeReliquias[i, 0]))
                 {
 
-                    Console.WriteLine($"A relíquia: {nomeDaReliquia} " + $"pode ser locada? {baseDeReliquias[i, 2]}");
+                    Console.WriteLine($"A relíquia: {nomeDaReliquia} " +
+                        $"pode ser locada? {baseDeReliquias[i, 2]}");
 
                     return baseDeReliquias[i, 2] == "Sim";
                 }
             }
-            return false;
+
+            Console.WriteLine("Nenhuma relíquia encontrada, deseja realizar a busca novamente?");
+            Console.WriteLine("Digite o número da opção desejada: [1] Sim | [2] Não");
+            int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
+
+            if (opcao == 1)
+            {
+                Console.WriteLine("Digite o nome da relíquia a ser pesquisada:");
+                nomeDaReliquia = Console.ReadLine();
+
+                return PesquisaReliquiaParaLocacao(nomeDaReliquia);
+            }
+
+            return null;
 
         }
 
@@ -120,13 +134,10 @@ namespace SistemaAlocação
         {
             for (int i = 0; i < baseDeReliquias.GetLength(0); i++)
             {
-                if (nomeDaReliquia == baseDeReliquias[i, 0])
+                if (CompararReliquia(nomeDaReliquia, baseDeReliquias[i, 0]))
                     baseDeReliquias[i, 2] = locar ? "Não" : "Sim";   // após a locação, irá alterar o status de SIM para NAO e de NAO para SIM
             }
-
-            Console.Clear();
-            SejaBemVindo();
-            Console.WriteLine("LIVRO ATUALIZADO COM SUCESSO!\r\n");
+            
         }
         /// <summary>
         /// Metodo que loca o veículo conforme o parametro usado, alterando a disponibilidade para "Não".
@@ -158,8 +169,9 @@ namespace SistemaAlocação
             Console.WriteLine("\nDigite o nome da Relíquia desejada:");
 
             var nomeDaReliquia = Console.ReadLine();
+            var resultadoPesquisa = PesquisaReliquiaParaLocacao(nomeDaReliquia);
 
-            if (PesquisaReliquiaParaLocacao(nomeDaReliquia)) // se o usuário não preencher corretamente, o veículo não poderá ser locado.
+            if (resultadoPesquisa != null && resultadoPesquisa == true) // se o usuário não preencher corretamente, o veículo não poderá ser locado.
             {
                 Console.Clear();
                 Console.WriteLine("Você deseja locar esta relíquia? Sim [1] | Não [2]");
@@ -191,6 +203,9 @@ namespace SistemaAlocação
             }
         }
 
+        /// <summary>
+        /// Metodo que carrega o conteudo inicial do Menu 2
+        /// </summary>
         public static void DevolverUmaReliquia()
         {
 
@@ -205,7 +220,9 @@ namespace SistemaAlocação
             Console.WriteLine("\nQual Relíquia você deseja devolver?");
 
             var nomeDaReliquia = Console.ReadLine();
-            if (PesquisaReliquiaParaLocacao(nomeDaReliquia)) // se o usuário não preencher corretamente, o veículo não poderá ser locado.
+            var resultadoPesquisa = PesquisaReliquiaParaLocacao(nomeDaReliquia);
+
+            if (resultadoPesquisa != null && resultadoPesquisa == false) // se o usuário não preencher corretamente, o veículo não poderá ser locado.
             {
                 Console.Clear();
                 SejaBemVindo();
@@ -214,8 +231,13 @@ namespace SistemaAlocação
                 AtualizarReliquia(nomeDaReliquia, Console.ReadKey().KeyChar.ToString() == "2");
 
                 Console.Clear();
+                SejaBemVindo();
+                Console.WriteLine("LISTAGEM ATUALIZADA COM SUCESSO!\r\n");
+
+                Console.Clear();
                 Console.WriteLine(">>> RELÍQUIA DEVOLVIDA COM SUCESSO! <<<");
             }
+
             else
             {
                 Console.Clear();
@@ -226,6 +248,7 @@ namespace SistemaAlocação
                 Console.ReadKey();
                 Console.Clear();
             }
+
             {
                 Console.WriteLine("===========================================");
                 Console.WriteLine("          RELAÇÃO DE RELÍQUIAS: ");
@@ -236,11 +259,15 @@ namespace SistemaAlocação
                     Console.WriteLine($"RELÍQUIA: {baseDeReliquias[i, 0]}\n" + $"DISPONÍVEL: {baseDeReliquias[i, 2]}\r\n");
 
                 }
-                Console.Clear();
+                //Console.Clear();
                 VolteSempre();
             }
         }
 
+        /// <summary>
+        /// Metodo que retorna a informacao no MENU, referente a opcao desejada
+        /// </summary>
+        /// <param name="operacao">Informação que aparecerá no MENU</param>
         public static void MostrarMenuInicialReliquia(string operacao)
         {
             Console.Clear();
@@ -250,6 +277,9 @@ namespace SistemaAlocação
             Console.WriteLine($"Menu - {operacao} ");
         }
 
+        /// <summary>
+        /// Método que retorna a listagem de veículos e as sua disponibilidade.
+        /// </summary>
         public static void MostrarListaDeReliquias()
         {
             for (int i = 0; i < baseDeReliquias.GetLength(0); i++)
@@ -259,6 +289,10 @@ namespace SistemaAlocação
             }
         }
 
+
+        /// <summary>
+        /// Método que trás a listagem de veículos atualizada.
+        /// </summary>
         public static void Lista()
         {
             Console.Clear();
@@ -268,6 +302,21 @@ namespace SistemaAlocação
             Console.WriteLine("\nDigite qualquer tecla para retornar ao Menu Inicial.");
 
             Console.ReadKey();
+        }
+
+
+        /// <summary>
+        /// Metodo que compara se as informações digitadas pelo usuário, desconsiderando os espaços e transformando para minusculo, conferem com as informações da listagem.
+        /// </summary>
+        /// <param name="informacaoParaComparar">Informação digitada pelo usuário</param>
+        /// <param name="informacaoASerComparada">Informação que consta na Listagem</param>
+        /// <returns></returns>
+        public static bool CompararReliquia(string informacaoParaComparar, string informacaoASerComparada)
+        {
+            if (informacaoParaComparar.ToLower().Replace(" ", "") == informacaoASerComparada.ToLower().Replace(" ", ""))
+                return true;
+
+            return false;
         }
 
         /// <summary>
