@@ -60,7 +60,7 @@ namespace ListaBiDeManeiraSimples
         /// Metodo que realiza a pesquisa pelo identificador unico de nossa coleção
         /// </summary>
         /// <param name="arrayBi">Nossa coleção de informações</param>
-        /// <param name="pId">Nosso identificador únicosr</param>
+        /// <param name="pId">Nosso identificador únicos</param>
         public static void PesquisandoInformacoesNaNossaLista(string[,] arrayBi, string pId)
         {
             //Realizamos nossa comparação dos mesmos tipos
