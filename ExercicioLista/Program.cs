@@ -10,23 +10,21 @@ namespace ExercicioLista
     {
         static void Main(string[] args)
         {
-            string[,] listaDeCarros = new string[10, 3];
+            string[,] listaDeCarros = new string[3, 3];
 
             int IdParaLista = 0;
 
-            InsereRegistro(ref listaDeCarros, ref IdParaLista);
+            MenuOpcoes(ref listaDeCarros, ref IdParaLista);
 
             Console.ReadKey();
 
-            InsereRegistro(ref listaDeCarros, ref IdParaLista);
+            MenuOpcoes(ref listaDeCarros, ref IdParaLista);
 
             Console.ReadKey();
-
-            Console.WriteLine("Escolha um registro a ser apagado: ");
 
         }
 
-        public static void InsereRegistro(ref string[,] listaDeCarros, ref int IdParaLista)
+        public static void MenuOpcoes(ref string[,] listaDeCarros, ref int IdParaLista)
         {
             for (int i = 0; i < listaDeCarros.GetLength(0); i++)
             {
@@ -46,21 +44,22 @@ namespace ExercicioLista
                 Console.WriteLine("\r\nO que você deseja fazer? [1] Adicionar | [2] Remover | [3] Sair :");
 
                 var continuar = Console.ReadKey().KeyChar.ToString();
-                
 
                 if (continuar == "2")
                 {
                     Console.WriteLine("Escolha um registro a ser apagado:");
                     var apagar = (Console.ReadLine());
 
-                    if(apagar == listaDeCarros[i, 0])
+                    if (apagar == listaDeCarros[i, 0])
                     {
+                        listaDeCarros[i, 0] = null;
                         listaDeCarros[i, 1] = null;
                         listaDeCarros[i, 2] = null;
 
-                        Console.WriteLine(string.Format("\nO Carro com ID {0} foi excluído com sucesso!", listaDeCarros[i,0], listaDeCarros[i,1], listaDeCarros[i,2]));
+                        Console.WriteLine(string.Format("\nO Carro com ID {0} foi excluído com sucesso!", listaDeCarros[i, 0], listaDeCarros[i, 1], listaDeCarros[i, 2]));
                         Console.ReadKey();
                     }
+
                 }
 
                 if (continuar == "3")
