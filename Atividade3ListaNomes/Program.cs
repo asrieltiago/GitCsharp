@@ -35,13 +35,16 @@ namespace Atividade3ListaNomes
             };
 
             Console.WriteLine("          --- LISTA DE ALUNOS --- \n");
+            Console.WriteLine("Expressão a ser encontrada dentro da nossa lista:");
+            var expressao = Console.ReadLine(); // Obtem o valor da expressao a ser comparada dentro da minha lista
 
-            for (int i = 0; i < listaAlunos.GetLength(0); i++)
+            for (int i = 0; i < listaAlunos.GetLength(0); i++) // laço de repetição que percorre nome por nome para fazer a comparação.
             {
-                Console.WriteLine($"NOME: {listaAlunos[i,0].Trim()}      |      " + 
-                    $"IDADE: {listaAlunos[i,1].Trim().}          |       " + $"SEXO: {listaAlunos[i,2].Trim()}");
+                Console.WriteLine($"NOME: {listaAlunos[i, 0].Trim()}      |      " +
+                    $"IDADE: {listaAlunos[i, 1].Trim()}          |       " + $"SEXO: {listaAlunos[i, 2].Trim()}");
             }
             Console.ReadKey();
+
             
         }
     }
