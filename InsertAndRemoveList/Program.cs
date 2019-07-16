@@ -17,7 +17,7 @@ namespace InsertAndRemoveList
             //Apresentação inicial do nosso sistema
             Console.WriteLine("Iniciando sistema de nome e idade.");
             //Criamos a variavel fora para não ser criada novamente
-            var escolhaInicial = ApresentaMenuInicial();
+            var escolhaInicial = MostrarMenuInicial();
 
             //Loop infinito até que de uma treta
             while (true)
@@ -39,9 +39,10 @@ namespace InsertAndRemoveList
                             //retorna diretamente o menu escolhido.
                             return;
                         }
+                    default: { Console.WriteLine("\nNão foi uma escolha valida dentro do menu de opções."); Console.ReadKey(); } break;
                 }
                 //Alimento a escolha novamente
-                escolhaInicial = ApresentaMenuInicial();
+                escolhaInicial = MostrarMenuInicial();
             }
 
         }
@@ -50,11 +51,11 @@ namespace InsertAndRemoveList
         /// Apresenta as informações do menu inicial
         /// </summary>
         /// <returns>Retorna o menu escolhido.</returns>
-        public static string ApresentaMenuInicial()
+        public static string MostrarMenuInicial()
         {
             //Entrou no Menu Inicial, inicializa a limpeza da tela
             Console.Clear();
-            Console.WriteLine("Menu");
+            Console.WriteLine("----------- MENU ------------\n");
             Console.WriteLine("1 - Inserir um novo registro.");
             Console.WriteLine("2 - Remover um novo registro.");
             Console.WriteLine("3 - Listar informações.");
@@ -71,14 +72,14 @@ namespace InsertAndRemoveList
         /// Método que insere informações dentro da nossa base de dados
         /// </summary>
         /// <param name="basedeDados">base de dados como ref para alterar todos os metodos</param>
-        /// <param name="indiceBase">Indice da nossa base como read para alterar todos os metodos</param>
+        /// <param name="indiceBase">Indice da nossa base como ref para alterar todos os metodos</param>
         public static void InseriValoresNaLista(ref string[,] basedeDados, ref int indiceBase)
         {
-            Console.WriteLine("------ Inserindo valores na lista ------");
+            Console.WriteLine("\n------ Inserindo valores na lista ------");
             Console.WriteLine("Informe um nome:");
             var nome = Console.ReadLine();
 
-            Console.WriteLine("Informe a idade:");
+            Console.WriteLine("\nInforme a idade:");
             var idade = Console.ReadLine();
 
             //Aumenta o tamanho da lista quando chegou no limite.
@@ -103,8 +104,9 @@ namespace InsertAndRemoveList
                 break;
             }
 
-            //Informamos para o usuario que finalizou o registro e que poderá retornar ao menu inicial.
-            Console.WriteLine("Registro cadastrado com sucesso!");
+            //Informamos para o usuario que finalizou o registro e que poderá retornar ao menu inicial.            
+            Console.WriteLine("\nRegistro cadastrado com sucesso!");
+            Console.WriteLine("----------------------------------------------------------");
             Console.WriteLine("Para voltar ao menu inicial, basta apertar qualquer tecla.");
             Console.ReadKey();
         }
@@ -145,21 +147,18 @@ namespace InsertAndRemoveList
         /// Metodo utilizado para remover um registro pelo ID dentro do sistema.
         /// </summary>
         /// <param name="baseDeDados">Base de dados em que ele irá remover o registro pelo ID</param>
-        public static void RemoverInformacoes(ref string[,] baseDeDados, string mostrarRegistrosInativos = "false")
+        public static void RemoverInformacoes(ref string[,] baseDeDados)
         {
             //Identificamos a tela do menu que o usuário está
             Console.WriteLine("Area de remoção de registro do sistema.");
 
             //Identifica que só deve remover os valores ativos dentro do sistema
-            if (mostrarRegistrosInativos == "true")
-            {
-                Console.WriteLine("Registros desativados dentro do sistema.");
-            }
 
             //Laço de repetição que mostra as informações dentro da tela de exclusão
             for (int i = 0; i < baseDeDados.GetLength(0); i++)
             {
-                Console.WriteLine($"ID {baseDeDados[i, 0]} | Nome: {baseDeDados[i, 1]} | Idade: {baseDeDados[i, 2]} | Data Alteração: {baseDeDados[i, 4]}");
+                if (baseDeDados[i, 3] != "false")
+                    Console.WriteLine($"ID {baseDeDados[i, 0]} | Nome: {baseDeDados[i, 1]} | Idade: {baseDeDados[i, 2]} | Data Alteração: {baseDeDados[i, 4]}");
             }
 
             //Indicamos para o usuario informar um ID dentro do nosso sistema para remoção
