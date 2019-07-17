@@ -1,10 +1,11 @@
-﻿select 
-		Modelo,
-		Ano,
-		(SUM(Vendas)) as 'Total Vendas',
-		(SUM(Vendas) / COUNT (*)) as 'Media Vendas',
-		YEAR(DataVenda) as 'Ano Venda'
-	from TabelaCarros	
-	where YEAR(DataVenda) = 2019
-	group by MODELO, ANO, YEAR(DataVenda)
-	order by MODELO asc
+﻿select 'Carros' as 'Carros',
+			SUM(Temp.Media) as 'Vendas',
+			Temp.AnoVenda
+		from (select
+					Modelo,
+					Ano,
+					(SUM(Vendas) / COUNT (*)) as 'Media',
+					YEAR(DataVenda) as 'AnoVenda'
+				from TabelaCarros	
+			group by MODELO, ANO, YEAR(DataVenda)) Temp
+	group by Temp.AnoVenda
