@@ -132,10 +132,10 @@ group by MA.Nome
 order by 'Total Vendido Marca' desc;
 --Trazer o valor total da marca mais vendida de todos os anos
 
-select CA.Id, CA.Modelo, V.Quantidade from Vendas V
+select CA.Modelo, SUM(V.Quantidade) as 'Quantidade' from Vendas V
 inner join Carros CA on V.Carro = CA.Id
-group by CA.Id,CA.Modelo, V.Quantidade
-order by V.Quantidade desc;
+group by CA.Modelo
+order by SUM(V.Quantidade) desc;
 --Trazer a quantidade do carro mais vendido de todos os anos
 
 select V.Carro, CA.Modelo, V.Valor * V.Quantidade  as 'Total Carro' from Vendas V
