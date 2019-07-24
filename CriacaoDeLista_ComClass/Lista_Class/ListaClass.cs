@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CriacaoDeLista_ComClass.Lista_Class
 {
-    class ListaClass
+    public class ListaClass
     {
         string[] listaClass;
 
@@ -15,6 +15,11 @@ namespace CriacaoDeLista_ComClass.Lista_Class
             listaClass = new string[10];
             CarregaLista();
 
+        }
+
+        public void MudarTamanho(int novoTamanho)
+        {
+            listaClass = new string[novoTamanho];
         }
 
         public void CarregaLista()

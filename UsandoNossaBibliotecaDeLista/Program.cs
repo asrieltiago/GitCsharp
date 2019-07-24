@@ -5,26 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CriacaoDeLista_
+namespace UsandoNossaBibliotecaDeLista
 {
     class Program
-    {        
+    {
         static void Main(string[] args)
         {
             var listaClass = new ListaClass();
-
-            listaClass.VarreRegistro();
-
-            listaClass.LimpaRegistro();
-
-            listaClass.MudarTamanho(50);
-
-            listaClass.CarregaLista();
-
-            listaClass.VarreRegistro();
-                     
-
         }
-
     }
 }
