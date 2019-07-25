@@ -26,5 +26,15 @@ namespace SolucaoBoletim.Boletim
             else
                 Console.WriteLine($"Aluno Reprovado com média {Media} e frequencia de {Frequencia}%");
         }
+
+        public string RetornaSituacao(int Media, int Frequencia)
+        {
+            if (Media >= 7 && Frequencia >= 75)
+                return "Aprovado";
+
+            else
+                return "Reprovado";
+        }
+
     }
 }
