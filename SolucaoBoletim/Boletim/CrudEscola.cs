@@ -14,7 +14,6 @@ namespace SolucaoBoletim.Boletim
 
         public int MenuInicial()
         {
-
             Console.Clear();
             Console.WriteLine("==============================");
             Console.WriteLine("           BEM VINDO!         ");
