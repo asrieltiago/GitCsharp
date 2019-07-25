@@ -13,26 +13,33 @@ namespace SolucaoBoletim
         {
             MetodosBoletim metodo = new MetodosBoletim();
 
-            decimal nota1, nota2, nota3;
-
             Console.WriteLine("BEM VINDO AO PROGRAMA DE BOLETIM ESCOLAR\n");
             Console.WriteLine("Digite a primeira nota: ");
-            nota1 = Convert.ToDecimal(Console.ReadLine());
+            var nota1 = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Digite a segunda nota: ");
-            nota2 = Convert.ToDecimal(Console.ReadLine());
+            var nota2 = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Digite a terceira nota: ");
-            nota3 = Convert.ToDecimal(Console.ReadLine());
+            var nota3 = Convert.ToInt32(Console.ReadLine());
 
-            metodo.Notas(nota1, nota2, nota3);
+            var media = metodo.Media(nota1, nota2, nota3);
 
-            metodo.Frequencia();
+            Console.WriteLine("Digite o número de aulas: ");
+            var totAulas = Convert.ToInt32(Console.ReadLine());
 
-            metodo.Situacao();
+            Console.WriteLine("Digite o número de faltas: ");
+            var totFaltas = Convert.ToInt32(Console.ReadLine());
+
+            int frequencia = metodo.Frequencia(totAulas, totFaltas);
+
+            metodo.Media(nota1, nota2, nota3);
+
+            metodo.Frequencia(totAulas, totFaltas);
+
+            metodo.Situacao(media, frequencia);
 
             Console.ReadKey();
-
         }
     }
 }

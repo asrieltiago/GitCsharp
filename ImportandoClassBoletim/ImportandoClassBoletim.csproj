@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{303613B7-42C4-42A3-AAE0-1F7DCF36BADA}</ProjectGuid>
+    <ProjectGuid>{8CF8DFF8-A89E-4854-B848-9CBA7FB4F0C4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SolucaoBoletim</RootNamespace>
-    <AssemblyName>SolucaoBoletim</AssemblyName>
+    <RootNamespace>ImportandoClassBoletim</RootNamespace>
+    <AssemblyName>ImportandoClassBoletim</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Boletim\MetodosBoletim.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
