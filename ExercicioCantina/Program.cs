@@ -11,23 +11,24 @@ namespace ExercicioCantina
     {
         static void Main(string[] args)
         {
-            Metodos compraCantina = new Metodos();
+            Metodos cantina = new Metodos();
 
-            compraCantina.ListarLanchinhos();            
+            cantina.ListarLanchinhos();            
 
-            while (true)
+            while (cantina.Saldo > 0.00)
             {
-                Console.Write($"\n{compraCantina.Nome}, informe qual lanche você quer comprar: ");
+                Console.Write($"\n{cantina.Nome}, informe qual lanche você quer comprar: ");
 
-                compraCantina.ComprarLanchinho();            
+                cantina.ComprarLanchinho();            
 
-                compraCantina.MostrarSaldo();
+                cantina.MostrarSaldo();
 
                 Console.WriteLine("Compra realizada com sucesso.");
-                Console.WriteLine($"Seu saldo atual é de R$ {compraCantina.Saldo}");
+                Console.WriteLine($"Seu saldo atual é de R$ {cantina.Saldo}");
 
                 Console.ReadKey();
 
+                break;
             }
 
 
