@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BibliotecaCalculadora.Funcoes
+namespace CalcLibrary
 {
-    public class ListaFuncoes
+    public class FuncoesCalc
     {
         /// <summary>
         /// Método que Soma os valores de N1 e N2.
@@ -15,7 +15,7 @@ namespace BibliotecaCalculadora.Funcoes
         /// <param name="n2">Segundo Valor</param>
         /// <returns></returns>
         public int Adicao(int n1, int n2)
-        {                       
+        {
             return n1 + n2;
         }
 
@@ -84,5 +84,4 @@ namespace BibliotecaCalculadora.Funcoes
             return Math.Sqrt(area / Math.PI);
         }
     }
-
 }

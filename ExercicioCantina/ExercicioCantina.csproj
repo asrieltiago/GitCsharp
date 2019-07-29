@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F75B8EF2-6056-46D7-9C90-FB1720D458E0}</ProjectGuid>
+    <ProjectGuid>{5E37126B-0470-4C05-9D67-C27A63F042D3}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BibliotecaCalculadora</RootNamespace>
-    <AssemblyName>BibliotecaCalculadora</AssemblyName>
+    <RootNamespace>ExercicioCantina</RootNamespace>
+    <AssemblyName>ExercicioCantina</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FuncoesCalculadora">
-      <HintPath>..\..\..\Users\hbsis\Downloads\FuncoesCalculadora.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,13 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Funcoes\ListaFuncoes.cs" />
+    <Compile Include="Cantina\Metodos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
