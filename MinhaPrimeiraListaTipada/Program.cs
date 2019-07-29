@@ -12,7 +12,7 @@ namespace MinhaPrimeiraListaTipada
         static void Main(string[] args)
         {
             //O indicador <T> é o tipo da minha lista com isso temos uma lista de lanches
-            List<Lanche> minhaLista = new List<Lanche>
+            List<Lanche> listaAdd = new List<Lanche>
             {
                 //Adiciono na minha lista um pão de queijo
                 new Lanche()
@@ -32,13 +32,12 @@ namespace MinhaPrimeiraListaTipada
             
             //Um laço solicitando 5 cadastros de lanches
             for (int i = 0; i < 5; i++)
-            {
-                Console.WriteLine("Informe o nome, quantidade e valor do lanche: ");
-                minhaLista.Add(new Lanche
+            {                
+                listaAdd.Add(new Lanche
                 {
-                    Nome = Console.ReadLine(),
-                    Quantidade = Convert.ToInt32(Console.ReadLine()),
-                    Valor = Convert.ToDouble(Console.ReadLine())
+                    Nome = RetornaValores("Nome"),
+                    Quantidade = int.Parse(RetornaValores("Quantidade")),
+                    Valor = double.Parse(RetornaValores("Valor"))
                 });
             }
 
@@ -52,26 +51,38 @@ namespace MinhaPrimeiraListaTipada
 
             //Varro a lista trazendo todos os itens em tela
             //"item in" significa que ele já é um indice da minha lista.
-            foreach (Lanche item in minhaLista)
+            foreach (Lanche item in listaAdd)
                 Console.WriteLine($"Lanches disponíveis: {item.Nome} | " +
                     $"Quantidade: {item.Quantidade} | " +
                     $"Valor: R$ {item.Valor.ToString("N2")} ");
 
             Console.WriteLine("Removendo item");            
 
-            foreach (Lanche item in minhaLista)
+            foreach (Lanche item in listaAdd)
             {
                 if (item.Quantidade == 3)
                 {
-                    minhaLista.Remove(item);
+                    listaAdd.Remove(item);
                     break;
                 }            
             }
-            
-            foreach (Lanche item in minhaLista)
-                Console.WriteLine($"Lanches disponíveis: {item.Nome}");
+
+            foreach (Lanche item in listaAdd)
+                Console.WriteLine($"Lanches disponíveis: {item.Nome} | " +
+                    $"Quantidade: {item.Quantidade} | " +
+                    $"Valor: R$ {item.Valor.ToString("N2")} ");
 
             Console.ReadKey();
+        }
+        /// <summary>
+        /// Metodo que mostra uma interface legal para adicionar os valores
+        /// </summary>
+        /// <param name="nome">Nome do campo que ira retornar o valor</param>
+        /// <returns>Retorna uma string com o valor</returns>
+        public static string RetornaValores(string nome)
+        {//informo e retorno o valor confrome a solicitação do campo
+            Console.WriteLine($"Informe o valor para o campo {nome}");
+            return Console.ReadLine();
         }
     }
 }
