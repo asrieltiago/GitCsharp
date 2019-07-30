@@ -41,14 +41,6 @@ namespace MinhaPrimeiraListaTipada
                 });
             }
 
-            //minhaLista.Add(new Lanche()
-            //
-            //{
-            //    Nome = "Bolinho de Soya + Refri Bonus: Gastrite",
-            //    Quantidade = 3,
-            //    Valor = 7.50
-            //});
-
             //Varro a lista trazendo todos os itens em tela
             //"item in" significa que ele já é um indice da minha lista.
             foreach (Lanche item in listaAdd)
