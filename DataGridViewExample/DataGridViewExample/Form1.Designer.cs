@@ -43,10 +43,11 @@
             this.carrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.querysInnerJoinDataSet2 = new DataGridViewExample.QuerysInnerJoinDataSet2();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.carrosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet2TableAdapters.CarrosTableAdapter();
             this.btnMarcas = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnVendas = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.carrosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet2TableAdapters.CarrosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet2)).BeginInit();
@@ -188,10 +189,6 @@
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             // 
-            // carrosTableAdapter
-            // 
-            this.carrosTableAdapter.ClearBeforeFill = true;
-            // 
             // btnMarcas
             // 
             this.btnMarcas.Location = new System.Drawing.Point(141, 2);
@@ -222,18 +219,33 @@
             this.btnVendas.UseVisualStyleBackColor = true;
             this.btnVendas.Click += new System.EventHandler(this.BtnVendas_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(534, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 36);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Reativar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // carrosTableAdapter
+            // 
+            this.carrosTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnVendas);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnMarcas);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Carros";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).EndInit();
@@ -262,6 +274,7 @@
         private System.Windows.Forms.Button btnMarcas;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnVendas;
+        private System.Windows.Forms.Button button1;
     }
 }
 

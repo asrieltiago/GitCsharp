@@ -28,9 +28,17 @@ namespace DataGridViewExample
         {
             var marcasSelect = ((System.Data.DataRowView)
                 this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
-                as DataGridViewExample.QuerysInnerJoinDataSet2.MarcasRow;
+                as DataGridViewExample.QuerysInnerJoinDataSet2.MarcasRow;            
 
-            this.marcasTableAdapter.DeleteQuery(marcasSelect.Id);
+            switch (e.ColumnIndex)
+            {   //Coluna Deletar
+                case 0:
+                    {
+                        this.marcasTableAdapter.DeleteQuery(marcasSelect.Id);
+                    }
+                    break;
+            }
+
             this.marcasTableAdapter.CustomQuery(querysInnerJoinDataSet2.Marcas);
         }
 
@@ -38,18 +46,21 @@ namespace DataGridViewExample
         {
             Form1 frmCarros = new Form1();
             frmCarros.ShowDialog();
+            this.Close();
         }
 
         private void BtnUsuarios2_Click(object sender, EventArgs e)
         {
             Form4 frmUsuarios = new Form4();
             frmUsuarios.ShowDialog();
+            this.Close();
         }
 
         private void BtnVendas_Click(object sender, EventArgs e)
         {
             Form2 frmVendas = new Form2();
             frmVendas.ShowDialog();
+            this.Close();
         }
     }
 }

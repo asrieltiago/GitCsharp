@@ -28,28 +28,40 @@ namespace DataGridViewExample
         {
             Form1 frmCarros = new Form1();
             frmCarros.ShowDialog();
-        }
-
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var usuarioSelect = ((System.Data.DataRowView)
-                this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
-                as DataGridViewExample.QuerysInnerJoinDataSet2.UsuariosRow;
-
-            this.usuariosTableAdapter.DeleteQuery(usuarioSelect.Id);
-            this.usuariosTableAdapter.CustomQuery(querysInnerJoinDataSet2.Usuarios);
+            this.Close();
         }
 
         private void BtnMarcas_Click(object sender, EventArgs e)
         {
             Form3 frmMarcas = new Form3();
             frmMarcas.ShowDialog();
+            this.Close();
         }
 
         private void BtnVendas_Click(object sender, EventArgs e)
         {
             Form2 frmVendas = new Form2();
             frmVendas.ShowDialog();
+            this.Close();
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var usuarioSelect = ((System.Data.DataRowView)
+                this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
+                as DataGridViewExample.QuerysInnerJoinDataSet2.UsuariosRow;                       
+
+            switch (e.ColumnIndex)
+            {   //Coluna Deletar
+                case 0:
+                    {
+                        this.usuariosTableAdapter.DeleteQuery(usuarioSelect.Id);
+                    }
+                    break;
+            }
+            this.usuariosTableAdapter.CustomQuery(querysInnerJoinDataSet2.Usuarios);
+        }
+
+
     }
 }
