@@ -19,27 +19,26 @@ namespace DataGridViewExample
 
         private void Forms5_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'querysInnerJoinDataSet2.DataTable1' table. You can move, or remove it, as needed.
-            this.dataTable1TableAdapter.GetAllData(this.querysInnerJoinDataSet2.DataTable1);         
-
+            // TODO: This line of code loads data into the 'querysInnerJoinDataSet2.Carros' table. You can move, or remove it, as needed.
+            this.carrosTableAdapter.CustomQueryReativar(this.querysInnerJoinDataSet2.Carros);
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var lixeiraGlobal = ((System.Data.DataRowView)
+            var carSelect = ((System.Data.DataRowView)
                this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
-               as DataGridViewExample.QuerysInnerJoinDataSet2.DataTable1Row;
+               as DataGridViewExample.QuerysInnerJoinDataSet2.CarrosRow;
 
-            //switch (e.ColumnIndex)
-            //{   //Coluna Alterar
-            //    case 0:
-            //        {
-            //            this.carrosTableAdapter.UpdateQueryReativar(carSelect.Id);
-            //        }
-            //        break;
-            //}
-            //
-            //this.carrosTableAdapter.CustomQueryReativar(querysInnerJoinDataSet2.Carros);
+            switch (e.ColumnIndex)
+            {   //Coluna Alterar
+                case 0:
+                    {
+                        this.carrosTableAdapter.UpdateQueryReativar(carSelect.Id);
+                    }
+                    break;
+            }
+
+            this.carrosTableAdapter.CustomQueryReativar(querysInnerJoinDataSet2.Carros);
         }
 
         private void BtnVoltar_Click(object sender, EventArgs e)

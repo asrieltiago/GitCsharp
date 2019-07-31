@@ -30,23 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.querysInnerJoinDataSet2 = new DataGridViewExample.QuerysInnerJoinDataSet2();
             this.btnMarcas = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnVendas = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.dataTable1TableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet2TableAdapters.DataTable1TableAdapter();
+            this.querysInnerJoinDataSet2 = new DataGridViewExample.QuerysInnerJoinDataSet2();
+            this.carrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.carrosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet2TableAdapters.CarrosTableAdapter();
             this.ReactivateCollumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RestaurarCommand = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.carrosTableAdapter1 = new DataGridViewExample.QuerysInnerJoinDataSet2TableAdapters.CarrosTableAdapter();
-            this.marcasTableAdapter1 = new DataGridViewExample.QuerysInnerJoinDataSet2TableAdapters.MarcasTableAdapter();
-            this.usuariosTableAdapter1 = new DataGridViewExample.QuerysInnerJoinDataSet2TableAdapters.UsuariosTableAdapter();
-            this.vendasTableAdapter1 = new DataGridViewExample.QuerysInnerJoinDataSet2TableAdapters.VendasTableAdapter();
+            this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.usuIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deleteCommandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reactivateCommandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -58,8 +63,17 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ReactivateCollumn,
             this.idDataGridViewTextBoxColumn,
-            this.RestaurarCommand});
-            this.dataGridView1.DataSource = this.dataTable1BindingSource;
+            this.modeloDataGridViewTextBoxColumn,
+            this.anoDataGridViewTextBoxColumn,
+            this.marcaDataGridViewTextBoxColumn,
+            this.ativoDataGridViewCheckBoxColumn,
+            this.usuIncDataGridViewTextBoxColumn,
+            this.usuAltDataGridViewTextBoxColumn,
+            this.datIncDataGridViewTextBoxColumn,
+            this.datAltDataGridViewTextBoxColumn,
+            this.deleteCommandDataGridViewTextBoxColumn,
+            this.reactivateCommandDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.carrosBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 55);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -68,16 +82,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(796, 383);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // dataTable1BindingSource
-            // 
-            this.dataTable1BindingSource.DataMember = "DataTable1";
-            this.dataTable1BindingSource.DataSource = this.querysInnerJoinDataSet2;
-            // 
-            // querysInnerJoinDataSet2
-            // 
-            this.querysInnerJoinDataSet2.DataSetName = "QuerysInnerJoinDataSet2";
-            this.querysInnerJoinDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnMarcas
             // 
@@ -119,9 +123,19 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.BtnVoltar_Click);
             // 
-            // dataTable1TableAdapter
+            // querysInnerJoinDataSet2
             // 
-            this.dataTable1TableAdapter.ClearBeforeFill = true;
+            this.querysInnerJoinDataSet2.DataSetName = "QuerysInnerJoinDataSet2";
+            this.querysInnerJoinDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // carrosBindingSource
+            // 
+            this.carrosBindingSource.DataMember = "Carros";
+            this.carrosBindingSource.DataSource = this.querysInnerJoinDataSet2;
+            // 
+            // carrosTableAdapter
+            // 
+            this.carrosTableAdapter.ClearBeforeFill = true;
             // 
             // ReactivateCollumn
             // 
@@ -141,30 +155,95 @@
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 125;
             // 
-            // RestaurarCommand
+            // modeloDataGridViewTextBoxColumn
             // 
-            this.RestaurarCommand.DataPropertyName = " Tabela";
-            this.RestaurarCommand.HeaderText = "Tabela";
-            this.RestaurarCommand.MinimumWidth = 6;
-            this.RestaurarCommand.Name = "RestaurarCommand";
-            this.RestaurarCommand.ReadOnly = true;
-            this.RestaurarCommand.Width = 125;
+            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
+            this.modeloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modeloDataGridViewTextBoxColumn.Width = 125;
             // 
-            // carrosTableAdapter1
+            // anoDataGridViewTextBoxColumn
             // 
-            this.carrosTableAdapter1.ClearBeforeFill = true;
+            this.anoDataGridViewTextBoxColumn.DataPropertyName = "Ano";
+            this.anoDataGridViewTextBoxColumn.HeaderText = "Ano";
+            this.anoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.anoDataGridViewTextBoxColumn.Name = "anoDataGridViewTextBoxColumn";
+            this.anoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.anoDataGridViewTextBoxColumn.Width = 125;
             // 
-            // marcasTableAdapter1
+            // marcaDataGridViewTextBoxColumn
             // 
-            this.marcasTableAdapter1.ClearBeforeFill = true;
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            this.marcaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.marcaDataGridViewTextBoxColumn.Width = 125;
             // 
-            // usuariosTableAdapter1
+            // ativoDataGridViewCheckBoxColumn
             // 
-            this.usuariosTableAdapter1.ClearBeforeFill = true;
+            this.ativoDataGridViewCheckBoxColumn.DataPropertyName = "Ativo";
+            this.ativoDataGridViewCheckBoxColumn.HeaderText = "Ativo";
+            this.ativoDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.ativoDataGridViewCheckBoxColumn.Name = "ativoDataGridViewCheckBoxColumn";
+            this.ativoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.ativoDataGridViewCheckBoxColumn.Width = 125;
             // 
-            // vendasTableAdapter1
+            // usuIncDataGridViewTextBoxColumn
             // 
-            this.vendasTableAdapter1.ClearBeforeFill = true;
+            this.usuIncDataGridViewTextBoxColumn.DataPropertyName = "UsuInc";
+            this.usuIncDataGridViewTextBoxColumn.HeaderText = "UsuInc";
+            this.usuIncDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.usuIncDataGridViewTextBoxColumn.Name = "usuIncDataGridViewTextBoxColumn";
+            this.usuIncDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usuIncDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // usuAltDataGridViewTextBoxColumn
+            // 
+            this.usuAltDataGridViewTextBoxColumn.DataPropertyName = "UsuAlt";
+            this.usuAltDataGridViewTextBoxColumn.HeaderText = "UsuAlt";
+            this.usuAltDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.usuAltDataGridViewTextBoxColumn.Name = "usuAltDataGridViewTextBoxColumn";
+            this.usuAltDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usuAltDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // datIncDataGridViewTextBoxColumn
+            // 
+            this.datIncDataGridViewTextBoxColumn.DataPropertyName = "DatInc";
+            this.datIncDataGridViewTextBoxColumn.HeaderText = "DatInc";
+            this.datIncDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.datIncDataGridViewTextBoxColumn.Name = "datIncDataGridViewTextBoxColumn";
+            this.datIncDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datIncDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // datAltDataGridViewTextBoxColumn
+            // 
+            this.datAltDataGridViewTextBoxColumn.DataPropertyName = "DatAlt";
+            this.datAltDataGridViewTextBoxColumn.HeaderText = "DatAlt";
+            this.datAltDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.datAltDataGridViewTextBoxColumn.Name = "datAltDataGridViewTextBoxColumn";
+            this.datAltDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datAltDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // deleteCommandDataGridViewTextBoxColumn
+            // 
+            this.deleteCommandDataGridViewTextBoxColumn.DataPropertyName = "DeleteCommand";
+            this.deleteCommandDataGridViewTextBoxColumn.HeaderText = "DeleteCommand";
+            this.deleteCommandDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.deleteCommandDataGridViewTextBoxColumn.Name = "deleteCommandDataGridViewTextBoxColumn";
+            this.deleteCommandDataGridViewTextBoxColumn.ReadOnly = true;
+            this.deleteCommandDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // reactivateCommandDataGridViewTextBoxColumn
+            // 
+            this.reactivateCommandDataGridViewTextBoxColumn.DataPropertyName = "ReactivateCommand";
+            this.reactivateCommandDataGridViewTextBoxColumn.HeaderText = "ReactivateCommand";
+            this.reactivateCommandDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reactivateCommandDataGridViewTextBoxColumn.Name = "reactivateCommandDataGridViewTextBoxColumn";
+            this.reactivateCommandDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reactivateCommandDataGridViewTextBoxColumn.Width = 125;
             // 
             // Forms5
             // 
@@ -180,8 +259,8 @@
             this.Text = "Forms5";
             this.Load += new System.EventHandler(this.Forms5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -194,14 +273,19 @@
         private System.Windows.Forms.Button btnVendas;
         private System.Windows.Forms.Button btnVoltar;
         private QuerysInnerJoinDataSet2 querysInnerJoinDataSet2;
-        private System.Windows.Forms.BindingSource dataTable1BindingSource;
-        private QuerysInnerJoinDataSet2TableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
+        private System.Windows.Forms.BindingSource carrosBindingSource;
+        private QuerysInnerJoinDataSet2TableAdapters.CarrosTableAdapter carrosTableAdapter;
         private System.Windows.Forms.DataGridViewButtonColumn ReactivateCollumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn RestaurarCommand;
-        private QuerysInnerJoinDataSet2TableAdapters.CarrosTableAdapter carrosTableAdapter1;
-        private QuerysInnerJoinDataSet2TableAdapters.MarcasTableAdapter marcasTableAdapter1;
-        private QuerysInnerJoinDataSet2TableAdapters.UsuariosTableAdapter usuariosTableAdapter1;
-        private QuerysInnerJoinDataSet2TableAdapters.VendasTableAdapter vendasTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn anoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuIncDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuAltDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datIncDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datAltDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deleteCommandDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reactivateCommandDataGridViewTextBoxColumn;
     }
 }

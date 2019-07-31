@@ -463,37 +463,6 @@ SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM 
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="QuerysInnerJoinConnectionString (Settings)" DbObjectName="SELECT 'carros' AS ' Tabela', Id FROM Carros WHERE (Ativo = 0) UNION ALL SELECT 'marcas' AS ' Tabela', Id FROM Marcas WHERE (Ativo = 0) UNION ALL SELECT 'vendas' AS ' Tabela', Id FROM Vendas WHERE (Ativo = 0) UNION ALL SELECT 'usuarios' AS ' Tabela', Id FROM Usuarios WHERE (Ativo = 0)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="GetAllData" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="GetAllData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="GetAllData">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT * FROM (SELECT 'carros' AS ' Tabela', Id
-FROM     Carros
-WHERE  (Ativo = 0)
-UNION ALL
-SELECT 'marcas' AS ' Tabela', Id
-FROM     Marcas
-WHERE  (Ativo = 0)
-UNION ALL
-SELECT 'vendas' AS ' Tabela', Id
-FROM     Vendas
-WHERE  (Ativo = 0)
-UNION ALL
-SELECT 'usuarios' AS ' Tabela', Id
-FROM     Usuarios
-WHERE  (Ativo = 0)) TEMP</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn=" Tabela" DataSetColumn=" Tabela" />
-              <Mapping SourceColumn="Id" DataSetColumn="Id" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -581,21 +550,6 @@ WHERE  (Ativo = 0)) TEMP</CommandText>
               <xs:element name="DatAlt" msprop:Generator_ColumnVarNameInTable="columnDatAlt" msprop:Generator_ColumnPropNameInRow="DatAlt" msprop:Generator_ColumnPropNameInTable="DatAltColumn" msprop:Generator_UserColumnName="DatAlt" type="xs:dateTime" />
               <xs:element name="DeleteCommand" msprop:Generator_ColumnVarNameInTable="columnDeleteCommand" msprop:Generator_ColumnPropNameInRow="DeleteCommand" msprop:Generator_ColumnPropNameInTable="DeleteCommandColumn" msprop:Generator_UserColumnName="DeleteCommand" type="xs:string" default="Deletar" minOccurs="0" />
               <xs:element name="ReactivateCommand" msprop:Generator_ColumnVarNameInTable="columnReactivateCommand" msprop:Generator_ColumnPropNameInRow="ReactivateCommand" msprop:Generator_ColumnPropNameInTable="ReactivateCommandColumn" msprop:Generator_UserColumnName="ReactivateCommand" type="xs:string" default="Reativar" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="_x0020_Tabela" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="column_Tabela" msprop:Generator_ColumnPropNameInRow="_Tabela" msprop:Generator_ColumnPropNameInTable="_TabelaColumn" msprop:Generator_UserColumnName=" Tabela" default="Tabela" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="8" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Id" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" minOccurs="0" />
-              <xs:element name="RestaurarCommand" msprop:Generator_ColumnVarNameInTable="columnRestaurarCommand" msprop:Generator_ColumnPropNameInRow="RestaurarCommand" msprop:Generator_ColumnPropNameInTable="RestaurarCommandColumn" msprop:Generator_UserColumnName="RestaurarCommand" type="xs:string" default="Restaurar" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
