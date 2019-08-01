@@ -1,4 +1,5 @@
-﻿using DataGridViewExample.Edicao;
+﻿using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,6 +89,26 @@ namespace DataGridViewExample
             Forms5 frmCarrosReativ = new Forms5();
             frmCarrosReativ.ShowDialog();
             this.Close();
+        }
+
+        private void BtnAdicionar_Click(object sender, EventArgs e)
+        {
+            //Abre o formulario de atualizacao
+            frmAdicionar formAdd = new frmAdicionar();
+            formAdd.ShowDialog();
+            //Insert na tabela do banco de dados
+            this.carrosTableAdapter.Insert(
+                formAdd.carrosRow.Modelo,
+                formAdd.carrosRow.Ano,
+                formAdd.carrosRow.Marca,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            //Atualiza a tabela
+            this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet2.Carros);
         }
     }
 }

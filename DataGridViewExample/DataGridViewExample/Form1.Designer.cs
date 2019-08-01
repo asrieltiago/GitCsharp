@@ -30,14 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.carrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.querysInnerJoinDataSet2 = new DataGridViewExample.QuerysInnerJoinDataSet2();
-            this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btnMarcas = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
-            this.btnVendas = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.carrosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet2TableAdapters.CarrosTableAdapter();
             this.DeleteCommand = new System.Windows.Forms.DataGridViewButtonColumn();
             this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +41,14 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.querysInnerJoinDataSet2 = new DataGridViewExample.QuerysInnerJoinDataSet2();
+            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.btnMarcas = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnVendas = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.carrosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet2TableAdapters.CarrosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet2)).BeginInit();
@@ -81,69 +81,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(796, 404);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // carrosBindingSource
-            // 
-            this.carrosBindingSource.DataMember = "Carros";
-            this.carrosBindingSource.DataSource = this.querysInnerJoinDataSet2;
-            // 
-            // querysInnerJoinDataSet2
-            // 
-            this.querysInnerJoinDataSet2.DataSetName = "QuerysInnerJoinDataSet2";
-            this.querysInnerJoinDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.Location = new System.Drawing.Point(1, 2);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(134, 37);
-            this.btnAdicionar.TabIndex = 1;
-            this.btnAdicionar.Text = "Adicionar";
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            // 
-            // btnMarcas
-            // 
-            this.btnMarcas.Location = new System.Drawing.Point(141, 2);
-            this.btnMarcas.Name = "btnMarcas";
-            this.btnMarcas.Size = new System.Drawing.Size(125, 37);
-            this.btnMarcas.TabIndex = 2;
-            this.btnMarcas.Text = "Marcas";
-            this.btnMarcas.UseVisualStyleBackColor = true;
-            this.btnMarcas.Click += new System.EventHandler(this.BtnMarcas_Click);
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Location = new System.Drawing.Point(272, 2);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(125, 37);
-            this.btnUsuarios.TabIndex = 3;
-            this.btnUsuarios.Text = "Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
-            // 
-            // btnVendas
-            // 
-            this.btnVendas.Location = new System.Drawing.Point(403, 2);
-            this.btnVendas.Name = "btnVendas";
-            this.btnVendas.Size = new System.Drawing.Size(125, 37);
-            this.btnVendas.TabIndex = 4;
-            this.btnVendas.Text = "Vendas";
-            this.btnVendas.UseVisualStyleBackColor = true;
-            this.btnVendas.Click += new System.EventHandler(this.BtnVendas_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(534, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 36);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Reativar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // carrosTableAdapter
-            // 
-            this.carrosTableAdapter.ClearBeforeFill = true;
             // 
             // DeleteCommand
             // 
@@ -245,6 +182,70 @@
             this.datAltDataGridViewTextBoxColumn.Name = "datAltDataGridViewTextBoxColumn";
             this.datAltDataGridViewTextBoxColumn.ReadOnly = true;
             this.datAltDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // carrosBindingSource
+            // 
+            this.carrosBindingSource.DataMember = "Carros";
+            this.carrosBindingSource.DataSource = this.querysInnerJoinDataSet2;
+            // 
+            // querysInnerJoinDataSet2
+            // 
+            this.querysInnerJoinDataSet2.DataSetName = "QuerysInnerJoinDataSet2";
+            this.querysInnerJoinDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.Location = new System.Drawing.Point(1, 2);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(134, 37);
+            this.btnAdicionar.TabIndex = 1;
+            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
+            // 
+            // btnMarcas
+            // 
+            this.btnMarcas.Location = new System.Drawing.Point(141, 2);
+            this.btnMarcas.Name = "btnMarcas";
+            this.btnMarcas.Size = new System.Drawing.Size(125, 37);
+            this.btnMarcas.TabIndex = 2;
+            this.btnMarcas.Text = "Marcas";
+            this.btnMarcas.UseVisualStyleBackColor = true;
+            this.btnMarcas.Click += new System.EventHandler(this.BtnMarcas_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Location = new System.Drawing.Point(272, 2);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(125, 37);
+            this.btnUsuarios.TabIndex = 3;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
+            // 
+            // btnVendas
+            // 
+            this.btnVendas.Location = new System.Drawing.Point(403, 2);
+            this.btnVendas.Name = "btnVendas";
+            this.btnVendas.Size = new System.Drawing.Size(125, 37);
+            this.btnVendas.TabIndex = 4;
+            this.btnVendas.Text = "Vendas";
+            this.btnVendas.UseVisualStyleBackColor = true;
+            this.btnVendas.Click += new System.EventHandler(this.BtnVendas_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(534, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 36);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Reativar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // carrosTableAdapter
+            // 
+            this.carrosTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
