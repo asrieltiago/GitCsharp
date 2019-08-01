@@ -58,7 +58,16 @@ namespace DataGridViewExample
                     {
                         this.vendasTableAdapter.DeleteQuery(vendasSelect.Id);
                     }
-                    break;                
+                    break;
+                case 1:
+                    {
+                        FrmEdicaoVendas editVendas = new FrmEdicaoVendas();
+                        editVendas.VendasRow = vendasSelect;
+                        editVendas.ShowDialog();
+
+                        this.vendasTableAdapter.Update(editVendas.VendasRow);
+                    }
+                    break;
             }
 
             this.vendasTableAdapter.CustomQuery(querysInnerJoinDataSet2.Vendas);

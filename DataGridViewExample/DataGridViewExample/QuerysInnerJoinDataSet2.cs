@@ -4,6 +4,9 @@
 
     partial class QuerysInnerJoinDataSet2
     {
+        partial class VendasDataTable
+        {
+        }
     }
 }
 
