@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridViewExample.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,7 +58,7 @@ namespace DataGridViewExample
                     {
                         this.vendasTableAdapter.DeleteQuery(vendasSelect.Id);
                     }
-                    break;
+                    break;                
             }
 
             this.vendasTableAdapter.CustomQuery(querysInnerJoinDataSet2.Vendas);

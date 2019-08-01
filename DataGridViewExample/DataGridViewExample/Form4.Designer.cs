@@ -30,7 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnVendas = new System.Windows.Forms.Button();
+            this.btnMarcas2 = new System.Windows.Forms.Button();
+            this.btnMarcas = new System.Windows.Forms.Button();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.querysInnerJoinDataSet2 = new DataGridViewExample.QuerysInnerJoinDataSet2();
+            this.usuariosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet2TableAdapters.UsuariosTableAdapter();
             this.DeleteCommand = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -38,13 +46,6 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.querysInnerJoinDataSet2 = new DataGridViewExample.QuerysInnerJoinDataSet2();
-            this.button1 = new System.Windows.Forms.Button();
-            this.usuariosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet2TableAdapters.UsuariosTableAdapter();
-            this.btnVendas = new System.Windows.Forms.Button();
-            this.btnMarcas2 = new System.Windows.Forms.Button();
-            this.btnMarcas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet2)).BeginInit();
@@ -58,6 +59,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DeleteCommand,
+            this.editar,
             this.idDataGridViewTextBoxColumn,
             this.usuarioDataGridViewTextBoxColumn,
             this.ativoDataGridViewCheckBoxColumn,
@@ -75,6 +77,59 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(4, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(157, 41);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Adicionar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnVendas
+            // 
+            this.btnVendas.Location = new System.Drawing.Point(464, 3);
+            this.btnVendas.Name = "btnVendas";
+            this.btnVendas.Size = new System.Drawing.Size(125, 37);
+            this.btnVendas.TabIndex = 7;
+            this.btnVendas.Text = "Vendas";
+            this.btnVendas.UseVisualStyleBackColor = true;
+            this.btnVendas.Click += new System.EventHandler(this.BtnVendas_Click);
+            // 
+            // btnMarcas2
+            // 
+            this.btnMarcas2.Location = new System.Drawing.Point(315, 3);
+            this.btnMarcas2.Name = "btnMarcas2";
+            this.btnMarcas2.Size = new System.Drawing.Size(125, 37);
+            this.btnMarcas2.TabIndex = 6;
+            this.btnMarcas2.Text = "Marcas";
+            this.btnMarcas2.UseVisualStyleBackColor = true;
+            this.btnMarcas2.Click += new System.EventHandler(this.BtnMarcas_Click);
+            // 
+            // btnMarcas
+            // 
+            this.btnMarcas.Location = new System.Drawing.Point(174, 3);
+            this.btnMarcas.Name = "btnMarcas";
+            this.btnMarcas.Size = new System.Drawing.Size(125, 37);
+            this.btnMarcas.TabIndex = 5;
+            this.btnMarcas.Text = "Carros";
+            this.btnMarcas.UseVisualStyleBackColor = true;
+            this.btnMarcas.Click += new System.EventHandler(this.BtnCarros_Click);
+            // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "Usuarios";
+            this.usuariosBindingSource.DataSource = this.querysInnerJoinDataSet2;
+            // 
+            // querysInnerJoinDataSet2
+            // 
+            this.querysInnerJoinDataSet2.DataSetName = "QuerysInnerJoinDataSet2";
+            this.querysInnerJoinDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
             // DeleteCommand
             // 
             this.DeleteCommand.DataPropertyName = "DeleteCommand";
@@ -85,6 +140,17 @@
             this.DeleteCommand.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.DeleteCommand.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.DeleteCommand.Width = 125;
+            // 
+            // editar
+            // 
+            this.editar.DataPropertyName = "Id";
+            this.editar.HeaderText = "Editar";
+            this.editar.MinimumWidth = 6;
+            this.editar.Name = "editar";
+            this.editar.ReadOnly = true;
+            this.editar.Text = "Editar";
+            this.editar.UseColumnTextForButtonValue = true;
+            this.editar.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -149,59 +215,6 @@
             this.datAltDataGridViewTextBoxColumn.ReadOnly = true;
             this.datAltDataGridViewTextBoxColumn.Width = 125;
             // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "Usuarios";
-            this.usuariosBindingSource.DataSource = this.querysInnerJoinDataSet2;
-            // 
-            // querysInnerJoinDataSet2
-            // 
-            this.querysInnerJoinDataSet2.DataSetName = "QuerysInnerJoinDataSet2";
-            this.querysInnerJoinDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(4, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(157, 41);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnVendas
-            // 
-            this.btnVendas.Location = new System.Drawing.Point(464, 3);
-            this.btnVendas.Name = "btnVendas";
-            this.btnVendas.Size = new System.Drawing.Size(125, 37);
-            this.btnVendas.TabIndex = 7;
-            this.btnVendas.Text = "Vendas";
-            this.btnVendas.UseVisualStyleBackColor = true;
-            this.btnVendas.Click += new System.EventHandler(this.BtnVendas_Click);
-            // 
-            // btnMarcas2
-            // 
-            this.btnMarcas2.Location = new System.Drawing.Point(315, 3);
-            this.btnMarcas2.Name = "btnMarcas2";
-            this.btnMarcas2.Size = new System.Drawing.Size(125, 37);
-            this.btnMarcas2.TabIndex = 6;
-            this.btnMarcas2.Text = "Marcas";
-            this.btnMarcas2.UseVisualStyleBackColor = true;
-            this.btnMarcas2.Click += new System.EventHandler(this.BtnMarcas_Click);
-            // 
-            // btnMarcas
-            // 
-            this.btnMarcas.Location = new System.Drawing.Point(174, 3);
-            this.btnMarcas.Name = "btnMarcas";
-            this.btnMarcas.Size = new System.Drawing.Size(125, 37);
-            this.btnMarcas.TabIndex = 5;
-            this.btnMarcas.Text = "Carros";
-            this.btnMarcas.UseVisualStyleBackColor = true;
-            this.btnMarcas.Click += new System.EventHandler(this.BtnCarros_Click);
-            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -229,7 +242,11 @@
         private QuerysInnerJoinDataSet2 querysInnerJoinDataSet2;
         private System.Windows.Forms.BindingSource usuariosBindingSource;
         private QuerysInnerJoinDataSet2TableAdapters.UsuariosTableAdapter usuariosTableAdapter;
+        private System.Windows.Forms.Button btnVendas;
+        private System.Windows.Forms.Button btnMarcas2;
+        private System.Windows.Forms.Button btnMarcas;
         private System.Windows.Forms.DataGridViewButtonColumn DeleteCommand;
+        private System.Windows.Forms.DataGridViewButtonColumn editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;
@@ -237,8 +254,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuAltDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datAltDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnVendas;
-        private System.Windows.Forms.Button btnMarcas2;
-        private System.Windows.Forms.Button btnMarcas;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridViewExample.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,13 +29,22 @@ namespace DataGridViewExample
         {
             var marcasSelect = ((System.Data.DataRowView)
                 this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
-                as DataGridViewExample.QuerysInnerJoinDataSet2.MarcasRow;            
+                as DataGridViewExample.QuerysInnerJoinDataSet2.MarcasRow;
 
             switch (e.ColumnIndex)
             {   //Coluna Deletar
                 case 0:
                     {
                         this.marcasTableAdapter.DeleteQuery(marcasSelect.Id);
+                    }
+                    break;
+                case 1:
+                    {
+                        FrmEdicaoMarcas editMarcas = new FrmEdicaoMarcas();
+                        editMarcas.MarcasRow = marcasSelect;
+                        editMarcas.ShowDialog();
+
+                        this.marcasTableAdapter.Update(editMarcas.MarcasRow);
                     }
                     break;
             }

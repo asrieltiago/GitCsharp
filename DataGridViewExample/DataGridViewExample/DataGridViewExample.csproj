@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Edicao\FrmEdicaoCarros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\FrmEdicaoCarros.Designer.cs">
+      <DependentUpon>FrmEdicaoCarros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\FrmEdicaoMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\FrmEdicaoMarcas.Designer.cs">
+      <DependentUpon>FrmEdicaoMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\FrmEdicaoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\FrmEdicaoUsuarios.Designer.cs">
+      <DependentUpon>FrmEdicaoUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edicao\FrmEdicaoVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\FrmEdicaoVendas.Designer.cs">
+      <DependentUpon>FrmEdicaoVendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +128,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuerysInnerJoinDataSet2.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Edicao\FrmEdicaoCarros.resx">
+      <DependentUpon>FrmEdicaoCarros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\FrmEdicaoMarcas.resx">
+      <DependentUpon>FrmEdicaoMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\FrmEdicaoUsuarios.resx">
+      <DependentUpon>FrmEdicaoUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edicao\FrmEdicaoVendas.resx">
+      <DependentUpon>FrmEdicaoVendas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridViewExample.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,6 +59,16 @@ namespace DataGridViewExample
                         this.usuariosTableAdapter.DeleteQuery(usuarioSelect.Id);
                     }
                     break;
+                case 1:
+                    {
+                        FrmEdicaoUsuarios editUsuarios = new FrmEdicaoUsuarios();
+                        editUsuarios.UsuariosRow = usuarioSelect;
+                        editUsuarios.ShowDialog();
+
+                        this.usuariosTableAdapter.Update(editUsuarios.UsuariosRow);
+                    }
+                    break;
+
             }
             this.usuariosTableAdapter.CustomQuery(querysInnerJoinDataSet2.Usuarios);
         }

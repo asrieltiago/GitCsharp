@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridViewExample.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,7 @@ namespace DataGridViewExample
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'querysInnerJoinDataSet2.Carros' table. You can move, or remove it, as needed.
-            this.carrosTableAdapter.CustomQuery(this.querysInnerJoinDataSet2.Carros);            
+            this.carrosTableAdapter.CustomQuery(this.querysInnerJoinDataSet2.Carros);
         }
 
         private void BtnMarcas_Click(object sender, EventArgs e)
@@ -55,6 +56,26 @@ namespace DataGridViewExample
                 case 0:
                     {
                         this.carrosTableAdapter.DeleteQuery(carSelect.Id);
+                    }
+                    break;
+                case 1:
+                    {
+                        FrmEdicaoCarros editCarros = new FrmEdicaoCarros();
+                        editCarros.CarrosRow = carSelect;
+                        editCarros.ShowDialog();
+
+                        //Forma 1 de atualizar (Atualiza todas as querys, mesmo que se altere apenas um campo)
+                        this.carrosTableAdapter.Update(editCarros.CarrosRow);
+
+                        //Forma 2 de atualizar os dados ( Forma correta, fazendo uma Query)
+
+                        /*this.carrosTableAdapter.UpdateQuery(
+                            editCarros.CarrosRow.Modelo,
+                            editCarros.CarrosRow.Ano.ToString(),
+                            editCarros.CarrosRow.Marca,
+                            editCarros.CarrosRow.UsuInc,
+                            DateTime.Now,
+                            editCarros.CarrosRow.Id);*/
                     }
                     break;
             }
