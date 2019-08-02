@@ -1,5 +1,6 @@
 ﻿using DataGridViewExample.Adicionar;
 using DataGridViewExample.Edicao;
+using DataGridViewExample.Meme;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,7 @@ namespace DataGridViewExample
         {
             InitializeComponent();
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -94,13 +96,15 @@ namespace DataGridViewExample
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
             //Abre o formulario de atualizacao
-            frmAdicionar formAdd = new frmAdicionar();
-            formAdd.ShowDialog();
+            frmAdicionar fAddCarro = new frmAdicionar();
+            fAddCarro.ShowDialog();
+
+            if(!string.IsNullOrEmpty(fAddCarro.carrosRow?.Modelo))
             //Insert na tabela do banco de dados
             this.carrosTableAdapter.Insert(
-                formAdd.carrosRow.Modelo,
-                formAdd.carrosRow.Ano,
-                formAdd.carrosRow.Marca,
+                fAddCarro.carrosRow.Modelo,
+                fAddCarro.carrosRow.Ano,
+                fAddCarro.carrosRow.Marca,
                 true,
                 1,
                 1,
@@ -109,6 +113,12 @@ namespace DataGridViewExample
                 );
             //Atualiza a tabela
             this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet2.Carros);
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            FormEpico epico = new FormEpico();
+            epico.Show();
         }
     }
 }

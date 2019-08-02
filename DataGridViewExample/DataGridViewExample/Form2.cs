@@ -1,4 +1,5 @@
-﻿using DataGridViewExample.Edicao;
+﻿using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,7 +51,7 @@ namespace DataGridViewExample
         {
             var vendasSelect = ((System.Data.DataRowView)
                 this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
-                as DataGridViewExample.QuerysInnerJoinDataSet2.VendasRow;            
+                as DataGridViewExample.QuerysInnerJoinDataSet2.VendasRow;
 
             switch (e.ColumnIndex)
             {   //Coluna Deletar
@@ -71,6 +72,26 @@ namespace DataGridViewExample
             }
 
             this.vendasTableAdapter.CustomQuery(querysInnerJoinDataSet2.Vendas);
+        }
+
+        private void BtnAdicionar_Click(object sender, EventArgs e)
+        {
+            frmAdicionarVenda fAddVenda = new frmAdicionarVenda();
+            fAddVenda.ShowDialog();
+
+            if (fAddVenda.vendasRow?.Carro > 0
+                && fAddVenda.vendasRow?.Valor > 0)
+                this.vendasTableAdapter.Insert(
+                fAddVenda.vendasRow.Carro,
+                fAddVenda.vendasRow.Quantidade,
+                fAddVenda.vendasRow.Valor,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            this.vendasTableAdapter.Fill(this.querysInnerJoinDataSet2.Vendas);
         }
     }
 }

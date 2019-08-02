@@ -1,4 +1,5 @@
-﻿using DataGridViewExample.Edicao;
+﻿using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,6 +72,24 @@ namespace DataGridViewExample
             Form2 frmVendas = new Form2();
             frmVendas.ShowDialog();
             this.Close();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarMarca fAddMarca = new frmAdicionarMarca();
+            fAddMarca.ShowDialog();
+            if (!string.IsNullOrEmpty(fAddMarca.marcasRow?.Nome))
+                this.marcasTableAdapter.Insert
+                (
+                fAddMarca.marcasRow.Nome,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+
+            this.marcasTableAdapter.Fill(this.querysInnerJoinDataSet2.Marcas);
         }
     }
 }

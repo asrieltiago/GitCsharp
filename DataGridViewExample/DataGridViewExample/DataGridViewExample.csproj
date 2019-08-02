@@ -52,6 +52,24 @@
     <Compile Include="Adicionar\frmAdicionar.Designer.cs">
       <DependentUpon>frmAdicionar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Adicionar\frmAdicionarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAdicionarMarca.Designer.cs">
+      <DependentUpon>frmAdicionarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\frmAdicionarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAdicionarUsuario.Designer.cs">
+      <DependentUpon>frmAdicionarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\frmAdicionarVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\frmAdicionarVenda.Designer.cs">
+      <DependentUpon>frmAdicionarVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Edicao\FrmEdicaoCarros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +130,12 @@
     <Compile Include="Form8.Designer.cs">
       <DependentUpon>Form8.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEpico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEpico.Designer.cs">
+      <DependentUpon>FormEpico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms5.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,7 +148,16 @@
     <Compile Include="Forms6.Designer.cs">
       <DependentUpon>Forms6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Meme\Show.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meme\Show.Designer.cs">
+      <DependentUpon>Show.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Carro.cs" />
+    <Compile Include="Model\Marca.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Model\Venda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuerysInnerJoinDataSet2.cs">
@@ -137,6 +170,15 @@
     </Compile>
     <EmbeddedResource Include="Adicionar\frmAdicionar.resx">
       <DependentUpon>frmAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\frmAdicionarMarca.resx">
+      <DependentUpon>frmAdicionarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\frmAdicionarUsuario.resx">
+      <DependentUpon>frmAdicionarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\frmAdicionarVenda.resx">
+      <DependentUpon>frmAdicionarVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edicao\FrmEdicaoCarros.resx">
       <DependentUpon>FrmEdicaoCarros.cs</DependentUpon>
@@ -168,11 +210,17 @@
     <EmbeddedResource Include="Form8.resx">
       <DependentUpon>Form8.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEpico.resx">
+      <DependentUpon>FormEpico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms5.resx">
       <DependentUpon>Forms5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms6.resx">
       <DependentUpon>Forms6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meme\Show.resx">
+      <DependentUpon>Show.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

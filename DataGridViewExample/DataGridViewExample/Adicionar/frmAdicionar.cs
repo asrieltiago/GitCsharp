@@ -19,7 +19,6 @@ namespace DataGridViewExample.Adicionar
         }
 
         public Carro carrosRow;
-
         
         private void FrmAdicionar_Load(object sender, EventArgs e)
         {
@@ -36,7 +35,6 @@ namespace DataGridViewExample.Adicionar
                 Ano = dateTimePicker1.Value,
                 Marca = (int)comboBox1.SelectedValue
             };
-
 
             this.Close();
         }
