@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolucaoBoletim", "SolucaoBoletim.csproj", "{303613B7-42C4-42A3-AAE0-1F7DCF36BADA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoEscolar", "..\GestaoEscolar\GestaoEscolar.csproj", "{3FA65EC5-6B34-41B2-B14B-C03AA041678C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{303613B7-42C4-42A3-AAE0-1F7DCF36BADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{303613B7-42C4-42A3-AAE0-1F7DCF36BADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{303613B7-42C4-42A3-AAE0-1F7DCF36BADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{303613B7-42C4-42A3-AAE0-1F7DCF36BADA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FA65EC5-6B34-41B2-B14B-C03AA041678C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FA65EC5-6B34-41B2-B14B-C03AA041678C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FA65EC5-6B34-41B2-B14B-C03AA041678C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FA65EC5-6B34-41B2-B14B-C03AA041678C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AADE75A-82A7-4AC8-A2F4-465443751DCF}
+	EndGlobalSection
+EndGlobal
