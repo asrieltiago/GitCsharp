@@ -38,6 +38,7 @@ namespace MVCProject.View.Adicionar
                 Devolucao = dtDevolucao.Value,
                 Tipo = (int)numTipo.Value
             };
+            this.Close();
         }
     }
 }

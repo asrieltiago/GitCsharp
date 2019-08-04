@@ -43,7 +43,7 @@ namespace MVCProject.Constructor
             return tem;
         }
 
-        public String cadastrar(String Nome, String Login, String Senha, String Email)
+        /*public String cadastrar(String Nome, String Login, String Senha, String Email)
         {
             tem = false;
             //comandos para inserir no banco caso o cadastro tenha dado certo
@@ -69,6 +69,6 @@ namespace MVCProject.Constructor
                 }
             }            
             return mensagem; 
-        }
+        }*/
     }
 }

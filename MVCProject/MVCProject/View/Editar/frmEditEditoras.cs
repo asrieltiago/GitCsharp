@@ -29,6 +29,8 @@ namespace MVCProject.View.Editar
         {
             EditorasRow.Nome = tbxNome.Text;
             EditorasRow.Descricao = tbxDescricao.Text;
+
+            this.Close();
         }
 
     }

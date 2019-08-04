@@ -27,6 +27,8 @@ namespace MVCProject.View.Adicionar
                 Tipo = tbxTipo.Text,
                 Descricao = tbxDescricao.Text
             };
+
+            this.Close();
         }
     }
 }

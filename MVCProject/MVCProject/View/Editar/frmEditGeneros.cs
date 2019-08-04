@@ -30,6 +30,9 @@ namespace MVCProject.View.Adicionar
         {
             GenerosRow.Tipo = tbxTipo.Text;
             GenerosRow.Descricao = tbxDescricao.Text;
+
+            this.Close();
         }
+        
     }
 }

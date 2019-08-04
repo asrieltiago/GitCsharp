@@ -24,7 +24,7 @@ namespace MVCProject.View.Adicionar
 
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
-            Controle controle = new Controle();
+            /*Controle controle = new Controle();
             String mensagem = controle.cadastrar(tbxNome.Text, tbxLogin.Text, tbxSenha.Text, tbxEmail.Text);
 
             if (controle.tem)// se isso for verdade, a mensagem será de sucesso.
@@ -35,7 +35,7 @@ namespace MVCProject.View.Adicionar
             else
             {
                 MessageBox.Show(mensagem,"Cadastro", MessageBoxButtons.OK,MessageBoxIcon.Information);
-            }
+            }*/
 
             usuariosRow = new Usuario
             {
@@ -44,6 +44,8 @@ namespace MVCProject.View.Adicionar
                 Senha = tbxSenha.Text,
                 Email = tbxEmail.Text
             };
+
+            MessageBox.Show("Cadastro realizado com Sucesso!", "Cadastro", MessageBoxButtons.OK,MessageBoxIcon.Information);
 
             this.Close();
         }

@@ -35,11 +35,11 @@
             this.autorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.livroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EditCommand = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridLivroAutor = new System.Windows.Forms.DataGridView();
             this.btnAdicionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.livroAutorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridLivroAutor)).BeginInit();
             this.SuspendLayout();
             // 
             // sistemaBibliotecaDBDataSet
@@ -84,47 +84,52 @@
             this.EditCommand.UseColumnTextForButtonValue = true;
             this.EditCommand.Width = 125;
             // 
-            // dataGridView1
+            // dataGridLivroAutor
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridLivroAutor.AllowUserToAddRows = false;
+            this.dataGridLivroAutor.AllowUserToDeleteRows = false;
+            this.dataGridLivroAutor.AutoGenerateColumns = false;
+            this.dataGridLivroAutor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridLivroAutor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EditCommand,
             this.livroDataGridViewTextBoxColumn,
             this.autorDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.livroAutorBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 63);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 387);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridLivroAutor.DataSource = this.livroAutorBindingSource;
+            this.dataGridLivroAutor.Location = new System.Drawing.Point(0, 51);
+            this.dataGridLivroAutor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridLivroAutor.Name = "dataGridLivroAutor";
+            this.dataGridLivroAutor.ReadOnly = true;
+            this.dataGridLivroAutor.RowHeadersWidth = 51;
+            this.dataGridLivroAutor.RowTemplate.Height = 24;
+            this.dataGridLivroAutor.Size = new System.Drawing.Size(600, 314);
+            this.dataGridLivroAutor.TabIndex = 2;
+            this.dataGridLivroAutor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // btnAdicionar
             // 
             this.btnAdicionar.Location = new System.Drawing.Point(1, 0);
+            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(797, 59);
+            this.btnAdicionar.Size = new System.Drawing.Size(598, 48);
             this.btnAdicionar.TabIndex = 3;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
             // 
             // frmLivroAutor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.btnAdicionar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridLivroAutor);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmLivroAutor";
             this.Text = "frmLivroAutor";
             this.Load += new System.EventHandler(this.FrmLivroAutor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.livroAutorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridLivroAutor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,7 +141,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn autorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn livroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn EditCommand;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridLivroAutor;
         private System.Windows.Forms.Button btnAdicionar;
     }
 }

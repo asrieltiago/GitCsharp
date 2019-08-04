@@ -24,7 +24,7 @@ namespace MVCProject.Model
             return tem;
         }
 
-        public String cadastrar(String Nome, String Login, String Senha, String Email)
+        /*public String cadastrar(String Nome, String Login, String Senha, String Email)
         {
             LoginComandos loginComandos = new LoginComandos();
             this.mensagem = loginComandos.cadastrar(Nome, Login, Senha, Email);
@@ -33,6 +33,6 @@ namespace MVCProject.Model
                 this.tem = true;
             }
             return mensagem;
-        }
+        }*/
     }
 }

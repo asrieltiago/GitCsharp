@@ -30,61 +30,51 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnAdicionar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
-            this.generosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.generosTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.GenerosTableAdapter();
+            this.dataGridGeneros = new System.Windows.Forms.DataGridView();
             this.EditCommand = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
+            this.generosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
+            this.generosTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.GenerosTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridGeneros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.generosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(3, 4);
+            this.btnAdicionar.Location = new System.Drawing.Point(2, 3);
+            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(795, 67);
+            this.btnAdicionar.Size = new System.Drawing.Size(596, 54);
             this.btnAdicionar.TabIndex = 0;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
             // 
-            // dataGridView1
+            // dataGridGeneros
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridGeneros.AllowUserToAddRows = false;
+            this.dataGridGeneros.AllowUserToDeleteRows = false;
+            this.dataGridGeneros.AutoGenerateColumns = false;
+            this.dataGridGeneros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridGeneros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EditCommand,
             this.idDataGridViewTextBoxColumn,
             this.tipoDataGridViewTextBoxColumn,
             this.descricaoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.generosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 69);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(793, 385);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // sistemaBibliotecaDBDataSet
-            // 
-            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
-            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // generosBindingSource
-            // 
-            this.generosBindingSource.DataMember = "Generos";
-            this.generosBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
-            // 
-            // generosTableAdapter
-            // 
-            this.generosTableAdapter.ClearBeforeFill = true;
+            this.dataGridGeneros.DataSource = this.generosBindingSource;
+            this.dataGridGeneros.Location = new System.Drawing.Point(3, 56);
+            this.dataGridGeneros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridGeneros.Name = "dataGridGeneros";
+            this.dataGridGeneros.ReadOnly = true;
+            this.dataGridGeneros.RowHeadersWidth = 51;
+            this.dataGridGeneros.RowTemplate.Height = 24;
+            this.dataGridGeneros.Size = new System.Drawing.Size(595, 313);
+            this.dataGridGeneros.TabIndex = 1;
+            this.dataGridGeneros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridGeneros_CellContentClick);
             // 
             // EditCommand
             // 
@@ -123,19 +113,34 @@
             this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
             this.descricaoDataGridViewTextBoxColumn.Width = 125;
             // 
+            // generosBindingSource
+            // 
+            this.generosBindingSource.DataMember = "Generos";
+            this.generosBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            // 
+            // sistemaBibliotecaDBDataSet
+            // 
+            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
+            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // generosTableAdapter
+            // 
+            this.generosTableAdapter.ClearBeforeFill = true;
+            // 
             // frmGeneros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.dataGridGeneros);
             this.Controls.Add(this.btnAdicionar);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmGeneros";
             this.Text = "frmGeneros";
             this.Load += new System.EventHandler(this.FrmGeneros_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridGeneros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.generosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -143,7 +148,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridGeneros;
         private SistemaBibliotecaDBDataSet sistemaBibliotecaDBDataSet;
         private System.Windows.Forms.BindingSource generosBindingSource;
         private SistemaBibliotecaDBDataSetTableAdapters.GenerosTableAdapter generosTableAdapter;
