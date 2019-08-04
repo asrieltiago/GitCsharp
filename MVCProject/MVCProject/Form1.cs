@@ -21,8 +21,9 @@ namespace MVCProject
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            frmPrincipal fPrincipal = new frmPrincipal();
-            fPrincipal.ShowDialog();
+            frmLoginSenha fLogin = new frmLoginSenha();
+            
+            fLogin.ShowDialog();
         }
     }
 }

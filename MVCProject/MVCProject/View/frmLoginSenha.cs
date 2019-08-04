@@ -1,4 +1,5 @@
-﻿using MVCProject.View.Adicionar;
+﻿using MVCProject.Model;
+using MVCProject.View.Adicionar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace MVCProject.View
         {
             InitializeComponent();
         }
+        
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
@@ -26,7 +28,24 @@ namespace MVCProject.View
         private void BtnCadastreSe_Click(object sender, EventArgs e)
         {
             frmAddUsuarios fAddUsuarios = new frmAddUsuarios();
-            fAddUsuarios.Show();
+            fAddUsuarios.ShowDialog();            
+        }
+
+        private void BtnEntrar_Click(object sender, EventArgs e)
+        {
+            Controle controle = new Controle();
+            //Acessando o metodo Acessar, enviando as informações de login e senha
+            controle.acessar(tbxLogin.Text, tbxSenha.Text);
+            if (controle.tem)
+            {
+                MessageBox.Show("Logado com sucesso", "Entrando", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmPrincipal fPrincipal = new frmPrincipal();
+                fPrincipal.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Login não encontrado, verifique o login e senha", "ERRO!", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
         }
     }
 }

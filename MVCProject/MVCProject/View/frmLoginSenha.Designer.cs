@@ -84,6 +84,7 @@
             this.btnEntrar.TabIndex = 4;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
+            this.btnEntrar.Click += new System.EventHandler(this.BtnEntrar_Click);
             // 
             // pictureBox1
             // 

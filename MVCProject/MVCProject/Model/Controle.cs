@@ -14,6 +14,7 @@ namespace MVCProject.Model
 
         public bool acessar(String login, String senha)
         {
+            //instanciando loginComando
             LoginComandos loginComando = new LoginComandos();
             tem = loginComando.verificarLogin(login, senha);
             if (!loginComando.mensagem.Equals(""))
@@ -23,8 +24,14 @@ namespace MVCProject.Model
             return tem;
         }
 
-        public String cadastrar(String email, String senha, String confSenha)
+        public String cadastrar(String Nome, String Login, String Senha, String Email)
         {
+            LoginComandos loginComandos = new LoginComandos();
+            this.mensagem = loginComandos.cadastrar(Nome, Login, Senha, Email);
+            if (loginComandos.tem)// a mensagem que vai vir será de Sucesso
+            {
+                this.tem = true;
+            }
             return mensagem;
         }
     }

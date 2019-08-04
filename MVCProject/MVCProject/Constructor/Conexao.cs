@@ -14,7 +14,7 @@ namespace MVCProject.Constructor
         //Construtor servirá para conectar com o banco de dados.
         public Conexao()
         {
-            con.ConnectionString = @"";
+            con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SistemaBibliotecaDB;Integrated Security=True";
         }
 
         public SqlConnection conectar()
