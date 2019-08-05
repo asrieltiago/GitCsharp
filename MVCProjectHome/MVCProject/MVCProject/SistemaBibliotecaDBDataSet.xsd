@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SistemaBibliotecaDBHomeConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="SistemaBibliotecaDBHomeConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MVCProject.Properties.Settings.GlobalReference.Default.SistemaBibliotecaDBHomeConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SistemaBibliotecaDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SistemaBibliotecaDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MVCProject.Properties.Settings.GlobalReference.Default.SistemaBibliotecaDBConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AutoresTableAdapter" GeneratorDataComponentClassName="AutoresTableAdapter" Name="Autores" UserDataComponentName="AutoresTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Autores" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Autores" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Autores] WHERE (([Id] = @Original_Id) AND ([Nome] = @Original_Nome) AND ((@IsNull_Descricao = 1 AND [Descricao] IS NULL) OR ([Descricao] = @Original_Descricao)))</CommandText>
@@ -63,7 +63,7 @@ SELECT Id, Nome, Descricao FROM Autores WHERE (Id = @Id)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EditorasTableAdapter" GeneratorDataComponentClassName="EditorasTableAdapter" Name="Editoras" UserDataComponentName="EditorasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Editoras" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Editoras" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Editoras] WHERE (([Id] = @Original_Id) AND ([Nome] = @Original_Nome) AND ((@IsNull_Descricao = 1 AND [Descricao] IS NULL) OR ([Descricao] = @Original_Descricao)))</CommandText>
@@ -117,7 +117,7 @@ SELECT Id, Nome, Descricao FROM Editoras WHERE (Id = @Id)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GenerosTableAdapter" GeneratorDataComponentClassName="GenerosTableAdapter" Name="Generos" UserDataComponentName="GenerosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Generos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Generos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Generos] WHERE (([Id] = @Original_Id) AND ([Tipo] = @Original_Tipo) AND ((@IsNull_Descricao = 1 AND [Descricao] IS NULL) OR ([Descricao] = @Original_Descricao)))</CommandText>
@@ -171,7 +171,7 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LivroAutorTableAdapter" GeneratorDataComponentClassName="LivroAutorTableAdapter" Name="LivroAutor" UserDataComponentName="LivroAutorTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.LivroAutor" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.LivroAutor" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [dbo].[LivroAutor] ([Livro], [Autor]) VALUES (@Livro, @Autor)</CommandText>
@@ -197,7 +197,7 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LivrosTableAdapter" GeneratorDataComponentClassName="LivrosTableAdapter" Name="Livros" UserDataComponentName="LivrosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Livros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Livros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Livros] WHERE (([Id] = @Original_Id) AND ([Registro] = @Original_Registro) AND ([Titulo] = @Original_Titulo) AND ([Isbn] = @Original_Isbn) AND ([Genero] = @Original_Genero) AND ([Editora] = @Original_Editora) AND ((@IsNull_Observacao = 1 AND [Observacao] IS NULL) OR ([Observacao] = @Original_Observacao)) AND ([Ativo] = @Original_Ativo) AND ([UsuInc] = @Original_UsuInc) AND ([UsuAlt] = @Original_UsuAlt) AND ([DatInc] = @Original_DatInc) AND ([DatAlt] = @Original_DatAlt))</CommandText>
@@ -296,7 +296,7 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacao, Ativo, 
               <Mapping SourceColumn="DatAlt" DataSetColumn="DatAlt" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[Livros] SET [Ativo] = 0 WHERE ([Id] = @Original_Id)</CommandText>
@@ -306,7 +306,7 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacao, Ativo, 
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Livros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Livros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacao, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Livros WHERE Ativo = 1</CommandText>
@@ -314,7 +314,7 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacao, Ativo, 
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Livros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="QueryAtivos" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy11" GeneratorSourceName="QueryAtivos" GetMethodModifier="Public" GetMethodName="GetDataBy11" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="QueryAtivos">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Livros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="QueryAtivos" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy11" GeneratorSourceName="QueryAtivos" GetMethodModifier="Public" GetMethodName="GetDataBy11" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="QueryAtivos">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacao, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Livros WHERE Ativo = 1</CommandText>
@@ -326,7 +326,7 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacao, Ativo, 
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LocacaoTableAdapter" GeneratorDataComponentClassName="LocacaoTableAdapter" Name="Locacao" UserDataComponentName="LocacaoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Locacao" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Locacao" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Locacao] WHERE (([Id] = @Original_Id) AND ([Livro] = @Original_Livro) AND ([Usuario] = @Original_Usuario) AND ([Tipo] = @Original_Tipo) AND ([Devolucao] = @Original_Devolucao) AND ([Ativo] = @Original_Ativo) AND ([UsuInc] = @Original_UsuInc) AND ([UsuAlt] = @Original_UsuAlt) AND ([DatInc] = @Original_DatInc) AND ([DatAlt] = @Original_DatAlt))</CommandText>
@@ -410,7 +410,7 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
               <Mapping SourceColumn="DatAlt" DataSetColumn="DatAlt" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[Locacao] SET [Ativo] = 0 WHERE ([Id] = @Original_Id)</CommandText>
@@ -420,7 +420,7 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Locacao" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="QueryAtivos" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="QueryAtivos" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="QueryAtivos">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Locacao" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="QueryAtivos" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="QueryAtivos" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="QueryAtivos">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Locacao WHERE Ativo = 1</CommandText>
@@ -432,7 +432,7 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UsuariosTableAdapter" GeneratorDataComponentClassName="UsuariosTableAdapter" Name="Usuarios" UserDataComponentName="UsuariosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Usuarios] WHERE (([Id] = @Original_Id) AND ([Nome] = @Original_Nome) AND ([Login] = @Original_Login) AND ([Senha] = @Original_Senha) AND ([Email] = @Original_Email) AND ([Ativo] = @Original_Ativo) AND ([UsuInc] = @Original_UsuInc) AND ([UsuAlt] = @Original_UsuAlt) AND ([DatInc] = @Original_DatInc) AND ([DatAlt] = @Original_DatAlt))</CommandText>
@@ -516,7 +516,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
               <Mapping SourceColumn="DatAlt" DataSetColumn="DatAlt" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[Usuarios] SET [Ativo] = 0 WHERE ([Id] = @Original_Id)</CommandText>
@@ -526,7 +526,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Usuarios WHERE Ativo = 1</CommandText>
@@ -534,7 +534,18 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="SistemaBibliotecaDBHomeConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="QueryAtivos" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy11" GeneratorSourceName="QueryAtivos" GetMethodModifier="Public" GetMethodName="GetDataBy11" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="QueryAtivos">
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="SistemaBibliotecaDBHome.dbo.Usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="LoginQuery" Modifier="Public" Name="LoginQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="LoginQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id FROM Usuarios WHERE login = @login and senha = @senha</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="login" ColumnName="Login" DataSourceName="SistemaBibliotecaDBHome.dbo.Usuarios" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@login" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Login" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="senha" ColumnName="Senha" DataSourceName="SistemaBibliotecaDBHome.dbo.Usuarios" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@senha" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Senha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="SistemaBibliotecaDBConnectionString (Settings)" DbObjectName="SistemaBibliotecaDB.dbo.Usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="QueryAtivos" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy11" GeneratorSourceName="QueryAtivos" GetMethodModifier="Public" GetMethodName="GetDataBy11" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="QueryAtivos">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Usuarios WHERE Ativo = 1</CommandText>

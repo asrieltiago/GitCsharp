@@ -1,4 +1,5 @@
-﻿using MVCProject.View.Adicionar;
+﻿using MVCProject.Model;
+using MVCProject.View.Adicionar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace MVCProject.View
         public frmAutores()
         {
             InitializeComponent();
+            
         }
 
         private void FrmAutores_Load(object sender, EventArgs e)

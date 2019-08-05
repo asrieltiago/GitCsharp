@@ -29,8 +29,8 @@ namespace MVCProject.View
         {
             frmAddLivroAutor fAddLivroAutor = new frmAddLivroAutor();
             fAddLivroAutor.ShowDialog();
-            if (fAddLivroAutor.livroAutorRow?.Autor > 0
-                && fAddLivroAutor.livroAutorRow?.Livro > 0)
+            /*if (fAddLivroAutor.livroAutorRow?.Autor > 0
+                && fAddLivroAutor.livroAutorRow?.Livro > 0)*/
                 this.livroAutorTableAdapter.Insert(
                     fAddLivroAutor.livroAutorRow.Autor,
                     fAddLivroAutor.livroAutorRow.Livro);

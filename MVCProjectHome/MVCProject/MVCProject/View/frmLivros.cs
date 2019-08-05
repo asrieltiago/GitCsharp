@@ -79,5 +79,11 @@ namespace MVCProject.View
             this.livrosTableAdapter.QueryAtivos(this.sistemaBibliotecaDBDataSet.Livros);
 
         }
+
+        private void BtnVincular_Click(object sender, EventArgs e)
+        {
+            frmLivroAutor fLivroAutor = new frmLivroAutor();
+            fLivroAutor.ShowDialog();
+        }
     }
 }

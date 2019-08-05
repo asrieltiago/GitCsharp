@@ -17,6 +17,7 @@ namespace MVCProject
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -24,6 +25,25 @@ namespace MVCProject
             frmLoginSenha fLogin = new frmLoginSenha();
             
             fLogin.ShowDialog();
+        }
+
+        private void BtnEntrar_Click(object sender, EventArgs e)
+        {
+
+            var result = this.usuariosTableAdapter1.LoginQuery(tbxLogin.Text, tbxSenha.Text);
+            if (result != null)
+            {
+                Session.user = new Usuario
+                {
+                    Id = (int)result
+                };
+                frmPrincipal frmPrincipal = new frmPrincipal();
+                frmPrincipal.ShowDialog();
+            }
+            else
+            {
+                throw new Exception("USUÁRIO INVÁLIDO.");
+            }
         }
     }
 }

@@ -26,11 +26,11 @@ namespace MVCProject.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=SistemaBibliotecaDBHome;Integr" +
-            "ated Security=True")]
-        public string SistemaBibliotecaDBHomeConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=SistemaBibliotecaDB;Integrated" +
+            " Security=True")]
+        public string SistemaBibliotecaDBConnectionString {
             get {
-                return ((string)(this["SistemaBibliotecaDBHomeConnectionString"]));
+                return ((string)(this["SistemaBibliotecaDBConnectionString"]));
             }
         }
     }

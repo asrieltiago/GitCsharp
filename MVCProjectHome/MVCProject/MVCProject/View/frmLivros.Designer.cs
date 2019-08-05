@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.DataGridLivros = new System.Windows.Forms.DataGridView();
-            this.livrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
-            this.livrosTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.LivrosTableAdapter();
             this.DeleteCommand = new System.Windows.Forms.DataGridViewButtonColumn();
             this.EditCommand = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +46,10 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.livrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
+            this.livrosTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.LivrosTableAdapter();
+            this.btnVincular = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridLivros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.livrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
@@ -57,9 +58,9 @@
             // btnAdicionar
             // 
             this.btnAdicionar.Location = new System.Drawing.Point(1, 1);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(598, 39);
+            this.btnAdicionar.Size = new System.Drawing.Size(411, 48);
             this.btnAdicionar.TabIndex = 3;
             this.btnAdicionar.Text = "ADICIONAR";
             this.btnAdicionar.UseVisualStyleBackColor = true;
@@ -88,29 +89,15 @@
             this.datIncDataGridViewTextBoxColumn,
             this.datAltDataGridViewTextBoxColumn});
             this.DataGridLivros.DataSource = this.livrosBindingSource;
-            this.DataGridLivros.Location = new System.Drawing.Point(1, 40);
-            this.DataGridLivros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DataGridLivros.Location = new System.Drawing.Point(1, 49);
+            this.DataGridLivros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DataGridLivros.Name = "DataGridLivros";
             this.DataGridLivros.ReadOnly = true;
             this.DataGridLivros.RowHeadersWidth = 51;
             this.DataGridLivros.RowTemplate.Height = 24;
-            this.DataGridLivros.Size = new System.Drawing.Size(599, 325);
+            this.DataGridLivros.Size = new System.Drawing.Size(799, 400);
             this.DataGridLivros.TabIndex = 2;
             this.DataGridLivros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridLivros_CellContentClick);
-            // 
-            // livrosBindingSource
-            // 
-            this.livrosBindingSource.DataMember = "Livros";
-            this.livrosBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
-            // 
-            // sistemaBibliotecaDBDataSet
-            // 
-            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
-            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // livrosTableAdapter
-            // 
-            this.livrosTableAdapter.ClearBeforeFill = true;
             // 
             // DeleteCommand
             // 
@@ -249,14 +236,39 @@
             this.datAltDataGridViewTextBoxColumn.ReadOnly = true;
             this.datAltDataGridViewTextBoxColumn.Width = 125;
             // 
+            // livrosBindingSource
+            // 
+            this.livrosBindingSource.DataMember = "Livros";
+            this.livrosBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            // 
+            // sistemaBibliotecaDBDataSet
+            // 
+            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
+            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // livrosTableAdapter
+            // 
+            this.livrosTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnVincular
+            // 
+            this.btnVincular.Location = new System.Drawing.Point(426, 1);
+            this.btnVincular.Name = "btnVincular";
+            this.btnVincular.Size = new System.Drawing.Size(374, 48);
+            this.btnVincular.TabIndex = 4;
+            this.btnVincular.Text = "VINCULAR";
+            this.btnVincular.UseVisualStyleBackColor = true;
+            this.btnVincular.Click += new System.EventHandler(this.BtnVincular_Click);
+            // 
             // frmLivros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 385);
+            this.ClientSize = new System.Drawing.Size(827, 474);
+            this.Controls.Add(this.btnVincular);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.DataGridLivros);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLivros";
             this.Text = "frmLivros";
             this.Load += new System.EventHandler(this.FrmLivros_Load);
@@ -289,5 +301,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuAltDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datAltDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnVincular;
     }
 }

@@ -33,6 +33,21 @@ namespace MVCProject.View
 
         private void BtnEntrar_Click(object sender, EventArgs e)
         {
+            var result = this.usuariosTableAdapter1.LoginQuery(tbxLogin.Text, tbxSenha.Text);
+            if (result != null)
+            {
+                Session.user = new Usuario
+                {
+                    Id = (int)result
+                };
+                frmPrincipal frmPrincipal = new frmPrincipal();
+                frmPrincipal.ShowDialog();
+            }
+            else
+            {
+                throw new Exception("USUÁRIO INVÁLIDO.");
+            }
+
             Controle controle = new Controle();
             //Acessando o metodo Acessar, enviando as informações de login e senha
             controle.acessar(tbxLogin.Text, tbxSenha.Text);
