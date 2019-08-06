@@ -9,3 +9,10 @@
         }
     }
 }
+
+namespace MVCProject.SistemaBibliotecaDBDataSetTableAdapters {
+    
+    
+    public partial class LivrosTableAdapter {
+    }
+}

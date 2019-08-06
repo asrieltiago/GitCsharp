@@ -37,9 +37,13 @@
             this.EditCommand = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridLivroAutor = new System.Windows.Forms.DataGridView();
             this.btnAdicionar = new System.Windows.Forms.Button();
+            this.autoresTableAdapter1 = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.AutoresTableAdapter();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.autoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.livroAutorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLivroAutor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // sistemaBibliotecaDBDataSet
@@ -95,41 +99,63 @@
             this.livroDataGridViewTextBoxColumn,
             this.autorDataGridViewTextBoxColumn});
             this.dataGridLivroAutor.DataSource = this.livroAutorBindingSource;
-            this.dataGridLivroAutor.Location = new System.Drawing.Point(0, 51);
-            this.dataGridLivroAutor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridLivroAutor.Location = new System.Drawing.Point(0, 63);
+            this.dataGridLivroAutor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridLivroAutor.Name = "dataGridLivroAutor";
             this.dataGridLivroAutor.ReadOnly = true;
             this.dataGridLivroAutor.RowHeadersWidth = 51;
             this.dataGridLivroAutor.RowTemplate.Height = 24;
-            this.dataGridLivroAutor.Size = new System.Drawing.Size(600, 314);
+            this.dataGridLivroAutor.Size = new System.Drawing.Size(800, 386);
             this.dataGridLivroAutor.TabIndex = 2;
             this.dataGridLivroAutor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(1, 0);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdicionar.Location = new System.Drawing.Point(0, 0);
+            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(598, 48);
+            this.btnAdicionar.Size = new System.Drawing.Size(367, 59);
             this.btnAdicionar.TabIndex = 3;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
             // 
+            // autoresTableAdapter1
+            // 
+            this.autoresTableAdapter1.ClearBeforeFill = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.autoresBindingSource;
+            this.comboBox1.DisplayMember = "Nome";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(440, 18);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(360, 24);
+            this.comboBox1.TabIndex = 4;
+            this.comboBox1.ValueMember = "Id";
+            // 
+            // autoresBindingSource
+            // 
+            this.autoresBindingSource.DataMember = "Autores";
+            this.autoresBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            // 
             // frmLivroAutor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(820, 469);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.dataGridLivroAutor);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLivroAutor";
             this.Text = "frmLivroAutor";
             this.Load += new System.EventHandler(this.FrmLivroAutor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.livroAutorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLivroAutor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -143,5 +169,8 @@
         private System.Windows.Forms.DataGridViewButtonColumn EditCommand;
         private System.Windows.Forms.DataGridView dataGridLivroAutor;
         private System.Windows.Forms.Button btnAdicionar;
+        private SistemaBibliotecaDBDataSetTableAdapters.AutoresTableAdapter autoresTableAdapter1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource autoresBindingSource;
     }
 }

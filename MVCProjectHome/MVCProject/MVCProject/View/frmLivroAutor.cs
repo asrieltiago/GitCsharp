@@ -18,10 +18,13 @@ namespace MVCProject.View
             InitializeComponent();
         }
 
+        public MVCProject.SistemaBibliotecaDBDataSet.LivrosRow LivrosRow;
+
         private void FrmLivroAutor_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.LivroAutor' table. You can move, or remove it, as needed.
             this.livroAutorTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.LivroAutor);
+            this.autoresTableAdapter1.Fill(this.sistemaBibliotecaDBDataSet.Autores);
 
         }
 
@@ -59,5 +62,6 @@ namespace MVCProject.View
 
 
         }
+
     }
 }

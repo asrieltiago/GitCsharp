@@ -22,7 +22,9 @@ namespace MVCProject.View
         private void FrmLivros_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Livros' table. You can move, or remove it, as needed.
-            this.livrosTableAdapter.QueryAtivos(this.sistemaBibliotecaDBDataSet.Livros);
+            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
+            // TODO: This line of code loads data into the 'sistemaBibliotecaDBDataSet.Livros' table. You can move, or remove it, as needed.
+            this.livrosTableAdapter.FillEditorasGeneros(this.sistemaBibliotecaDBDataSet.Livros);
 
         }
 
@@ -45,13 +47,21 @@ namespace MVCProject.View
                         editLivro.LivrosRow = livroSelect;
                         editLivro.ShowDialog();
 
+                        
                         this.livrosTableAdapter.Update(editLivro.LivrosRow);
 
                     }
                     break;
+                case 2:
+                    {
+                        frmLivroAutor fLivroAutor = new frmLivroAutor();
+                        fLivroAutor.LivrosRow = livroSelect;
+                        fLivroAutor.ShowDialog();
+                    }
+                    break; 
             }
 
-            this.livrosTableAdapter.QueryAtivos(sistemaBibliotecaDBDataSet.Livros);
+            this.livrosTableAdapter.FillEditorasGeneros(sistemaBibliotecaDBDataSet.Livros);
         }
 
         private void BtnAdicionar_Click(object sender, EventArgs e)
@@ -76,14 +86,10 @@ namespace MVCProject.View
                     DateTime.Now
                     );
 
-            this.livrosTableAdapter.QueryAtivos(this.sistemaBibliotecaDBDataSet.Livros);
+            this.livrosTableAdapter.FillEditorasGeneros(this.sistemaBibliotecaDBDataSet.Livros);
 
         }
 
-        private void BtnVincular_Click(object sender, EventArgs e)
-        {
-            frmLivroAutor fLivroAutor = new frmLivroAutor();
-            fLivroAutor.ShowDialog();
-        }
+ 
     }
 }
