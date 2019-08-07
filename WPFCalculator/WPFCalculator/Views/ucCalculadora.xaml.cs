@@ -25,18 +25,23 @@ namespace WPFCalculator.Views
             InitializeComponent();
         }
 
-        
+        private MediaPlayer mediaplayer = new MediaPlayer();
 
         private void BtnAdicao_Click(object sender, RoutedEventArgs e)
-        {          
+        {
+            mediaplayer.Open(new Uri(@"C:\Users\hbsis\Downloads\johncena.mp3"));
+            mediaplayer.Play(); 
             double valueOne = Convert.ToDouble(tbxValueOne.Text);
             double valueTwo = Convert.ToDouble(tbxValueTwo.Text);
-            double resultado = valueOne + valueTwo;
+            double resultado = valueOne + valueTwo;            
             tbxResultado.Text = valueOne.ToString() + " + " + valueTwo.ToString() + " = " + resultado.ToString();
+            
         }
 
         private void BtnSubtracao_Click(object sender, RoutedEventArgs e)
         {
+            mediaplayer.Open(new Uri(@"C:\Users\hbsis\Downloads\oloquinho.mp3"));
+            mediaplayer.Play();
             double valueOne = Convert.ToDouble(tbxValueOne.Text);
             double valueTwo = Convert.ToDouble(tbxValueTwo.Text);
             double resultado = valueOne - valueTwo;
@@ -45,6 +50,8 @@ namespace WPFCalculator.Views
 
         private void BtnMultiplicacao_Click(object sender, RoutedEventArgs e)
         {
+            mediaplayer.Open(new Uri(@"C:\Users\hbsis\Downloads\ai-pai-para-hihi.mp3"));
+            mediaplayer.Play();
             double valueOne = Convert.ToDouble(tbxValueOne.Text);
             double valueTwo = Convert.ToDouble(tbxValueTwo.Text);
             double resultado = valueOne * valueTwo;
@@ -53,6 +60,8 @@ namespace WPFCalculator.Views
 
         private void BtnDivisao_Click(object sender, RoutedEventArgs e)
         {
+            mediaplayer.Open(new Uri(@"C:\Users\hbsis\Downloads\superslam.mp3"));
+            mediaplayer.Play();
             double valueOne = Convert.ToDouble(tbxValueOne.Text);
             double valueTwo = Convert.ToDouble(tbxValueTwo.Text);
             double resultado = valueOne / valueTwo;
