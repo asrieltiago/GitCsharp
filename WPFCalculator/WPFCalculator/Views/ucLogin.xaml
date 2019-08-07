@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="WPFCalculator.Views.ucLogin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFCalculator.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="450">
+    <Grid Margin="0,0,9.6,9.6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="135*"/>
+            <RowDefinition Height="130*"/>
+            <RowDefinition Height="184*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="tbxLogin" Margin="49,37,46.6,30.2" TextWrapping="Wrap"/>
+        <TextBox x:Name="tbxSenha" Margin="49,33.8,46.6,30.6" TextWrapping="Wrap" Grid.Row="1"/>
+        <Button x:Name="tbxEntrar" Content="Entrar" Margin="115,34,91,74" FontSize="30" FontWeight="Bold" Grid.Row="2" Click="TbxEntrar_Click"/>
+
+    </Grid>
+</UserControl>
