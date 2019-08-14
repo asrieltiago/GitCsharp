@@ -1,0 +1,153 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tela de Login</title>
+</head>
+<body>
+    <style>
+        body {
+  background: #f7f7f7;
+  
+}
+.container {
+  background: #f7f7f7;
+  padding:5em 0;
+}
+.login {
+  font-family: Sans-serif;
+  width:39.5%;
+  margin: 0 auto;
+  border: 1px solid #e0e0e0;
+  border-radius:.4em;
+}
+.login h1 {
+  font-size:1.5em;
+  color: #efefef;  
+  /*color: #0891C7;*/
+  background: #212121;
+  padding-left: 1em;
+  height: 2em;
+  line-height: 2em;
+  margin-bottom: 1em;
+  border-radius:.2em .2em 0 0;
+} 
+.login .hr {
+  margin: 1em 0;
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.login input[type="text"],.login input[type="password"] {
+  margin: .5em 25%;
+  height: 2.5em;
+  line-height: 2.5em;
+  padding:0 0 0 .5em;
+  width: 50%;
+  border: 1px solid #e0e0e0;
+}
+.login input[type="submit"] {
+  background: #0891C7;
+  margin-left: 25%;
+  margin-top: .5em;
+  margin-bottom: 1em;
+  color: #e0e0e0;
+  border: 0;
+  height: 2em;
+  width: 5em;
+}
+.login .links {
+  text-align: center;
+  font-size: .8em;  
+}
+.login a {
+  color: #0891C7;
+  opacity: .6;
+}
+    </style>
+    <div class="container">
+        <div class="login">
+            <h1>Login</h1>
+
+            <input id="inputLogin" name="Login" type="text" placeholder="Login" />
+            <br />
+
+            <input id="inputSenha" name="Senha" type="password" placeholder="Senha" />
+
+            <input type="submit" value="Entrar" onclick="ValidaLogin()" />            
+            <input type="button" value="Aumentar Fonte" onclick="Aumentar()">
+            <input type="button" value="Diminuir Fonte" onclick="Diminuir()">
+            <br />
+            <div class="links">
+                <a href="#">Criar Conta</a>
+                <a href="#">Esqueceu a Senha?</a>
+            </div>
+            <br /><br />
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var countIncrement = 16;
+
+        
+
+        var usuarios = [{
+            "Id": "1",
+            "Login": "admin",
+            "Senha": "admin"
+
+        },
+        {
+            "Id": "2",
+            "Login": "asriel",
+            "Senha": "123"
+        },
+        {
+            "Id": "3",
+            "Login": "nicholas",
+            "Senha": "123"
+
+        },
+        {
+            "Id": "4",
+            "Login": "giomar",
+            "Senha": "pulsao"
+
+        }];
+
+        function Aumentar() {
+            var document1 = document.getElementById('inputLogin');
+            var document2 = document.getElementById('inputSenha');
+            countIncrement = countIncrement + 1;
+
+            document1.style.fontSize = (countIncrement) + "px";
+            document2.style.fontSize = (countIncrement) + "px";
+        }
+
+        function Diminuir() {
+            var document1 = document.getElementById('inputLogin');
+            var document2 = document.getElementById('inputSenha');
+            countIncrement = countIncrement - 1;
+
+            document1.style.fontSize = (countIncrement) + "px";
+            document2.style.fontSize = (countIncrement) + "px";
+        }
+
+        function ValidaLogin() {
+            $.each(usuarios,
+                function (index, object) {
+                    var contentUsuarioVal = $('#inputLogin').val();
+                    var contentSenhaVal = $('#inputSenha').val();                    
+
+                    if (contentUsuarioVal === (object.Login) && contentSenhaVal === (object.Senha)) {
+                        alert('Login realizado com sucesso.');
+                    }                    
+                });
+
+        }
+    </script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFirstNuget", "WebFirstNuget\WebFirstNuget.csproj", "{81061CE7-C8BC-4CEC-BC54-0799EC752D4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81061CE7-C8BC-4CEC-BC54-0799EC752D4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81061CE7-C8BC-4CEC-BC54-0799EC752D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81061CE7-C8BC-4CEC-BC54-0799EC752D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81061CE7-C8BC-4CEC-BC54-0799EC752D4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB42CDBB-C957-4617-AA90-C2E43C850072}
+	EndGlobalSection
+EndGlobal
