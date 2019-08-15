@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projeto WEB Api</title>
+
+    <link href="css/prettify.css" rel="stylesheet">
+    <link href="css/hemisu-light.css" rel="stylesheet">
+    <link href="css/screen.css" rel="stylesheet" media="screen">
+    <link href="css/classic.css" rel="stylesheet" media="screen">
+
+    <style>
+        pre {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="saveContactForm" method="post">
+        <input type="text" name="Usuario1" placeholder="text content" />
+        <input type="button" id="saveContact" value="Save" />
+    </form>
+
+    <div id="gridContent">
+        <div id="exemplo"></div>
+    </div>
+    <div>
+        <form id="formUsu" method="post">
+            <input type="text" name="Usuario1" placeholder="Informar nome do Usuário" />
+            <input type="submit" value="Cadastrar" />
+        </form>
+    </div>
+
+    <div>
+        <input type="text" name="txtid" id="txtid" placeholder="Informar o ID do Usuario" />
+        <input type="button" value="Pesquisar" id="btnPesquisar" />
+    </div>
+
+    <div class="container-fluid">
+        <div>
+            <div>
+                <label for="usuario">Nome:</label>
+                <input type="text" id="usuario" />
+            </div>
+            <div>
+                <label for="ativo">Ativo:</label>
+                <input type="text" id="ativo" />
+            </div>
+            <div>
+                <label for="usuinc">UsuInc:</label>
+                <input type="text" id="usuinc" />
+            </div>
+            <div>
+                <label for="usualt">UsuAlt:</label>
+                <input type="text" id="usualt" />
+            </div>
+            <div>
+                <label for="datinc">DatInc:</label>
+                <input type="text" id="datinc" />
+            </div>
+            <div>
+                <label for="datalt">DatAlt:</label>
+                <input type="text" id="datalt" />
+            </div>
+        </div>
+    </div>
+
+    <div id="carros"></div>
+    <div id="marcas"></div>
+    <div id="vendas"></div>
+    <div id="usuarios"></div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- jquery.columns.min.js -->
+    <script type="text/javascript"
+            src="jquery.columns.min.js"></script>
+
+    <script>
+        $('#saveContact').click(function () {
+            $.post("http://localhost:59768/Api/Usuarios",
+                $("#saveContactForm").serialize(),
+                function (value) {
+                    GridRefresh();
+                }, "json");
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#btnPesquisar').click(function () {
+                var id = $('#txtid').val();
+                $.getJSON("http://localhost:59768/Api/Usuarios/" + id, function (data) {
+                    $('#usuario').val(data.Usuario1);
+                    $('#ativo').val(data.Ativo);
+                    $('#usuinc').val(data.UsuInc);
+                    $('#usualt').val(data.UsuAlt);
+                    $('#datinc').val(data.DatInc);
+                    $('#datalt').val(data.DatAlt);
+                });
+            });
+        });
+
+        /* JSON.stringify($('formsUsu').serializeArray())*/
+        function CadastraUsuario() {
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:59768/Api/Usuarios',
+                data: JSON.stringify($('formsUsu').serializeArray()),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json'
+            });
+        }
+
+        function GridRefresh() {
+            $.get('http://localhost:59768/Api/Usuarios', function (dataApi) {
+                $('#gridContent').html("<div id=\"usuarios\"></div>");
+                $('#usuarios').columns({ data: dataApi });
+            });
+        }
+    </script>
+
+
+    <script>
+        $.get('http://localhost:59768/Api/Usuarios', function (dataApi) {
+            $('#usuarios').columns({ data: dataApi });
+        });
+    </script>
+    <!--<script>
+        $.get('http://localhost:59768/Api/Marcas', function (dataApi) {
+            $('#marcas').columns({ data: dataApi });
+        });
+    </script>
+    <script>
+        $.get('http://localhost:59768/Api/Vendas', function (dataApi) {
+            $('#vendas').columns({ data: dataApi });
+        });
+    </script>
+    <script>
+        $.get('http://localhost:59768/Api/Values', function (dataApi) {
+            $('#carros').columns({ data: dataApi });
+        });
+    </script>-->
+
+</body>
+</html>
