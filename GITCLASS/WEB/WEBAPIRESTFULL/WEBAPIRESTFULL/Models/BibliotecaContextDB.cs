@@ -71,7 +71,7 @@ namespace WEBAPIRESTFULL.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Livros>()
-                .Property(e => e.Observacoes)
+                .Property(e => e.Observacao)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Livros>()

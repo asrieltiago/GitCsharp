@@ -34,7 +34,7 @@ namespace WEBAPIRESTFULL.Models
         public string Sinopse { get; set; }
 
         [StringLength(1000)]
-        public string Observacoes { get; set; }
+        public string Observacao { get; set; }
 
         public bool Ativo { get; set; }
 
