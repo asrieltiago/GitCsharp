@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <title>Aula 6 Ex 3</title>
+ <style>
+  body{
+   background: black;
+   color: red;
+  }
+  h1{
+   color: orange;
+  }
+ </style>
+</head>
+<body>
+ <script>
+  var valor = 1500.50
+  var nome = window.prompt('Qual é o seu nome?')
+  window.alert('Prazer em te conhecer,' + nome + '!')
+  document.write(`<h1>Olá ${nome}, seu nome tem ${nome.length} letras.</h1>`)  
+  document.write(`<h1>Olá, seu nome em maiúsculas é: ${nome.toUpperCase()}.</h1>`)
+  document.write(`<h1>Olá, seu nome em minúsculas é: ${nome.toLowerCase()}.</h1>`)
+  //Convertendo numero para a moeda do Local Informado. Ex: BRL, USD, EUR.
+  document.write(`O valor informado foi ${valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.`)
+  
+ </script>
+</body>
+</html>  
