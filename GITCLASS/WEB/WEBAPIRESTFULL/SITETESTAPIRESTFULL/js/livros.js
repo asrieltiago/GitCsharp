@@ -1,20 +1,20 @@
-GetMethod(null);
-
-    /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
-	jQuery(document).ready(function(){
-
+    jQuery(document).ready(function(){	
+		
 		jQuery('#bntCancelar').click(function(){
 			$('#bntCancelar').hide();
 			
 			$('#Id').val("");
-			$('#Nome').val("");
-			$('#Login').val("");
-			$('#Email').val("");
-			$('#Senha').val("");
+			$('#Registro').val("")
+			$('#Titulo').val("");
+			$('#Isbn').val("");
+			$('#Genero').val("");
+			$('#Editora').val("");
+			$('#Sinopse').val("");
+			$('#Observacao').val("");			
 			$('#Ativo select').val("true");
 		});
 		
-		
+		GetMethod(null);
 	});
 	
 	function GetByID(id){
@@ -25,7 +25,7 @@ GetMethod(null);
         var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Usuarios/"+id,
+			"url": "http://localhost:59271/Api/Livros/"+id,
 			"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -33,12 +33,15 @@ GetMethod(null);
 				}
 			}
 	
-			$.ajax(settings).done(function (response) {
+			$.ajax(settings).done(function (response) {	
 				$('#Id').val(response.Id);
-				$('#Nome').val(response.Nome);
-				$('#Login').val(response.Login);
-				$('#Senha').val(response.Senha);
-				$('#Email').val(response.Email);
+				$('#Registro').val(response.Registro);
+				$('#Titulo').val(response.Titulo);
+				$('#Isbn').val(response.Isbn);
+				$('#Genero').val(response.Genero);
+				$('#Editora').val(response.Editora);
+				$('#Sinopse').val(response.Sinopse);				
+				$('#Observacao').val(response.Observacao);				
 				$('#Ativo select').val(response.Ativo);
 			});
 		
@@ -47,7 +50,7 @@ GetMethod(null);
 	function Deleting(id){
 			 var settings = {
 			  "crossDomain": true,
-			  "url": "http://localhost:59271/Api/Usuarios/"+id,
+			  "url": "http://localhost:59271/Api/Livros/"+id,
 			  "method": "DELETE",
 			  "headers": {
 				"Content-Type": "application/x-www-form-urlencoded",
@@ -64,7 +67,7 @@ GetMethod(null);
 			var settings = {
 				"async": true,
 				"crossDomain": true,
-				"url": "http://localhost:59271/Api/Usuarios",
+				"url": "http://localhost:59271/Api/Livros",
 				"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -82,22 +85,30 @@ GetMethod(null);
     function RefreshGrid(contentValue){
 	   $('#tDataGrid').empty();
 	   $('#tDataGrid').html(  '<tbody>'
-							+ 	'<tr>'
-							+ 		'<th>ID</th>'
-							+ 		'<th>Nome</th>'
-							+ 		'<th>Login</th>'
-							+ 		'<th>E-mail</th>'
-							+ 		'<th>Ativo</th>'
-							+ 		'<th>Opções</th>'
-							+ 	'</tr>'
+							+ '<tr>'
+							+ '<th>Id</th>'
+							+ '<th>Registro</th>'
+							+ '<th>Titulo</th>'
+							+ '<th>Isbn</th>'
+							+ '<th>Genero</th>'
+							+ '<th>Editora</th>'
+							+ '<th>Sinopse</th>'   
+							+ '<th>Observacao</th>'
+							+ '<th>Ativo</th>'
+							+ '<th>Opções</th>'
+							+ '</tr>'
 							+ '</tbody>');
 
 		$.each(contentValue,function(index,value) {
         var row =     '<tr>'
 						+ '<td>' + value.Id       + '</td>'
-						+ '<td>' + value.Nome    + '</td>'
-						+ '<td>' + value.Login    + '</td>'
-						+ '<td>' + value.Email    + '</td>'
+						+ '<td>' + value.Registro    + '</td>'
+						+ '<td>' + value.Titulo    + '</td>'
+						+ '<td>' + value.Isbn    + '</td>'
+						+ '<td>' + value.Genero    + '</td>'
+						+ '<td>' + value.Editora    + '</td>'
+						+ '<td>' + value.Sinopse    + '</td>'	
+						+ '<td>' + value.Observacao    + '</td>'	
 						+ '<td>' + value.Ativo    + '</td>'
 						+ '<td>' 
 						+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'
