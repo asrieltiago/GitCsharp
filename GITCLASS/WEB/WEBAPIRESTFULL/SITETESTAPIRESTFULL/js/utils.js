@@ -1,57 +1,93 @@
-jQuery(document).ready(function(){
-    /* Indica que o evento submit do form irá realizar esta ação agora*/
-    jQuery('.form-post').submit(function(){
-        /* Neste contesto 'this' representa o form deste ID  #myform */  
-        var Id = $($(this)[0][1]).val();            
-        var dados = $(this).serialize();
-        var sendpost = $(this).attr('send-post');
-        var callStr  = $(this).attr('call');
-        var method = "POST";
+var urlBaseApi = "http://localhost:59271/Api/"
 
-        if(Id !== "") {
-            method = "PUT";
-            Id = "/"+Id;
-        }
+function buildUrlApi(sendpost, id = '') {
+  if (id !== '')
+    id = '/' + id;
 
-         var settings = {
-          "crossDomain": true,
-          "url": "http://localhost:59271/Api/"+sendpost + Id,
-          "method": method,
-          "headers": {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Accept": "*/*"
-          },
-          "data": dados
-        }
+  return urlBaseApi + sendpost + id;
+}
 
-        $.ajax(settings).done(function (response) {
-           window[callStr](response);
-        });
-        
-        return false;
-	});
+jQuery(document).ready(function () {
+  /* Indica que o evento submit do form irá realizar esta ação agora*/
+  jQuery('.form-post').submit(function () {
+    /* Neste contesto 'this' representa o form deste ID  #myform */
+    var id = $($(this)[0][1]).val();
+    var dados = $(this).serialize();
+    var sendpost = $(this).attr('send-post');
+    var callStr = $(this).attr('call');
+    var method = "POST";
 
-	SetGridClickEvents();
+    if (id !== "") {
+      method = "PUT";
+      id = "/" + id;
+    }
+
+    var settings = {
+      "crossDomain": true,
+      "url": buildUrlApi(sendpost, id),
+      "method": method,
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "*/*"
+      },
+      "data": dados
+    }
+
+    $.ajax(settings).done(function (response) {
+      window[callStr](response);
+    });
+
+    return false;
+  });
+
+  SetGridClickEvents();
 });
 
-	                
-function SetGridClickEvents(){
-	jQuery('.btn-delet-event').click(function(){
-		var id = $(this).attr('value');
-		var sendpost = $(this).attr('send-post');
 
-		var settings = {
-			"crossDomain": true,
-			"url": "http://localhost:59271/Api/"+ sendpost +"/"+ id,
-			"method": "DELETE",
-			"headers": {
-			  "Content-Type": "application/x-www-form-urlencoded",
-			  "Accept": "*/*"
-			}
-		  }
+function SetGridClickEvents() {
+  jQuery('.btn-delet-event').click(function () {
+    var id = $(this).attr('value');
+    var sendpost = $(this).attr('send-post');
 
-		  $.ajax(settings).done(function (response) {
-			  GetMethod(null);
-		  });
-	});
+    var settings = {
+      "crossDomain": true,
+      "url": buildUrlApi(sendpost, id),
+      "method": "DELETE",
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "*/*"
+      }
+    }
+
+    $.ajax(settings).done(function (response) {
+      GetMethod(null);
+    });
+  });
+
+  jQuery('.btn-editing-event').click(function () {
+    if ($('#collapse-btn')[0].innerHTML.indexOf('fa-plus') > -1)
+        $('#collapse-btn').click();
+
+    var id = $(this).attr('value');
+    var sendpost = $(this).attr('send-post');
+
+    var settings = {
+      "crossDomain": true,
+      "url": buildUrlApi(sendpost, id),
+      "method": "GET",
+      "headers":
+      {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "*/*"
+      }
+    }
+
+    $.ajax(settings).done(function (response) {
+      $.each(response, function (index, value) {
+        /* teste Property and value*/
+        $('input[name="' + index + '"]').val(value);
+      });
+      $('#bntCancelar').show();
+    });
+  });
 }

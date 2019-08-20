@@ -7,12 +7,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using WEBAPIRESTFULL.Models;
 
 namespace WEBAPIRESTFULL.Controllers
 {
-    public class LocacaosController : ApiController
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    public class LocacaoController : ApiController
     {
         private BibliotecaContextDB db = new BibliotecaContextDB();
 
@@ -49,6 +51,8 @@ namespace WEBAPIRESTFULL.Controllers
                 return BadRequest();
             }
 
+            locacao.UsuInc = 1;
+            locacao.UsuAlt = 1;
             db.Entry(locacao).State = EntityState.Modified;
 
             try
@@ -76,7 +80,8 @@ namespace WEBAPIRESTFULL.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                if (ModelState.Keys.First().ToString() != "locacao.Id")
+                    return BadRequest(ModelState);
             }
 
             db.Locacao.Add(locacao);

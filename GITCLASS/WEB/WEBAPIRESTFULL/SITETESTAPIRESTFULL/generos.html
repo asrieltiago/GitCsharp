@@ -350,45 +350,18 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="treeview">
-              <a href="usuarios.html">
-                <i class="fa   fa-cog"></i> <span>Usuários</span>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="livros.html">
-                <i class="fa   fa-cog"></i> <span>Livros</span>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="autores.html">
-                <i class="fa   fa-cog"></i> <span>Autores</span>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="editoras.html">
-                <i class="fa   fa-cog"></i> <span>Editoras</span>
-              </a>
-            </li>
-            <li class="treeview">
               <a href="generos.html">
-                <i class="fa   fa-cog"></i> <span>Gêneros</span>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="locacao.html">
-                <i class="fa   fa-cog"></i> <span>Locação</span>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="livroautor.html">
-                <i class="fa   fa-cog"></i> <span>Livro Autor</span>
-              </a>
-            </li>
-            <li class="treeview">
-              <a href="index.html">
                 <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
               </a>
-            </li>
+              <ul class="treeview-menu">
+                <li><a href="usuarios.html"><i class= "fa fa-circle-o"></i>Usuários</a></li>
+                <li><a href="autores.html"><i class= "fa fa-circle-o"></i>Autores</a></li>
+                <li><a href="livros.html"><i class= "fa fa-circle-o"></i>Livros</a></li>
+                <li><a href="generos.html"><i class= "fa fa-circle-o"></i>Gêneros</a></li>
+                <li><a href="editoras.html"><i class= "fa fa-circle-o"></i>Editoras</a></li>
+                <li><a href="locacao.html"><i class= "fa fa-circle-o"></i>Locacão</a></li>
+              </ul>
+            </li>          
           </ul>
       </section>
       <!-- /.sidebar -->
@@ -414,7 +387,7 @@
             <h3 class="box-title">Gêneros</h3>
 			
 			<div class="box-tools pull-right">
-				<button type="button" class="btn btn-block btn-primary" data-widget="collapse"><i class="fa fa-plus"></i></button>
+				<button id="collapse-btn" type="button" class="btn btn-block btn-primary" data-widget="collapse"><i class="fa fa-plus"></i></button>
 			</div>
           </div>
           <!-- hidden field -->
