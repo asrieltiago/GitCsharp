@@ -174,6 +174,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LivrosController.cs" />
     <Compile Include="Controllers\LocacaosController.cs" />
+    <Compile Include="Controllers\MatchFile.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -186,6 +187,10 @@
     <Compile Include="Migrations\201908201815035_Second.Designer.cs">
       <DependentUpon>201908201815035_Second.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908211432480_RemovendoVirtuals.cs" />
+    <Compile Include="Migrations\201908211432480_RemovendoVirtuals.Designer.cs">
+      <DependentUpon>201908211432480_RemovendoVirtuals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Autores.cs" />
     <Compile Include="Models\BibliotecaContextDB.cs" />
@@ -196,6 +201,7 @@
     <Compile Include="Models\UserControls.cs" />
     <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Single.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908201815035_Second.resx">
       <DependentUpon>201908201815035_Second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908211432480_RemovendoVirtuals.resx">
+      <DependentUpon>201908211432480_RemovendoVirtuals.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -37,10 +37,20 @@ jQuery(document).ready(function () {
       window[callStr](response);
     });
 
+    $.each(form, function (index, value) {
+      $('[name=\'' + value.name + '\']').val("");
+    });
+
     return false;
   });
 
-  SetGridClickEvents();
+  jQuery('.btn-cancel-form').click(function () {
+    var form = $(this).parent().parent().parent()[0];
+
+    $.each(form, function (index, value) {
+      $('[name=\'' + value.name + '\']').val("");
+    });
+  });
 });
 
 
@@ -66,7 +76,7 @@ function SetGridClickEvents() {
 
   jQuery('.btn-editing-event').click(function () {
     if ($('#collapse-btn')[0].innerHTML.indexOf('fa-plus') > -1)
-        $('#collapse-btn').click();
+      $('#collapse-btn').click();
 
     var id = $(this).attr('value');
     var sendpost = $(this).attr('send-post');
@@ -86,6 +96,7 @@ function SetGridClickEvents() {
       $.each(response, function (index, value) {
         /* teste Property and value*/
         $('input[name="' + index + '"]').val(value);
+        $('select[name="' + index + '"]').val(value);
       });
       $('#bntCancelar').show();
     });
