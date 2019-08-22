@@ -38,9 +38,9 @@ jQuery(document).ready(function () {
         $.each(response, function (index, value) {
             $('#Editora')[0].innerHTML += '<option value=\'' + value.Id + '\'>' + value.Nome + '</option>';
         });
+        GetMethod(null);
     });
 
-    GetMethod(null);
 });
 
 function GetMethod(object) {
