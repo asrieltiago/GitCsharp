@@ -6,6 +6,7 @@ namespace WEBAPIRESTFULL.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.UI;
 
     public partial class Livros : UserControls
     {
@@ -35,7 +36,7 @@ namespace WEBAPIRESTFULL.Models
         public string Sinopse { get; set; }
 
         [StringLength(1000)]
-        public string Observacao { get; set; }
+        public string Observacoes { get; set; }
 
         [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

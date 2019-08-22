@@ -13,7 +13,7 @@ using WEBAPIRESTFULL.Models;
 
 namespace WEBAPIRESTFULL.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [EnableCors(origins:"*",headers:"*",methods:"*")]
     public class AutoresController : ApiController
     {
         private BibliotecaContextDB db = new BibliotecaContextDB();
@@ -78,8 +78,8 @@ namespace WEBAPIRESTFULL.Controllers
         {
             if (!ModelState.IsValid)
             {
-                if (ModelState.Keys.First().ToString() != "autores.Id")
-                    return BadRequest(ModelState);
+                if(ModelState.Keys.First().ToString() != "autores.Id")
+                return BadRequest(ModelState);
             }
 
             db.Autores.Add(autores);
@@ -93,12 +93,14 @@ namespace WEBAPIRESTFULL.Controllers
         public IHttpActionResult DeleteAutores(int id)
         {
             Autores autores = db.Autores.Find(id);
+
             if (autores == null)
             {
                 return NotFound();
             }
 
-            autores.Ativo = false;
+            db.Autores.Find(id).Ativo = false;
+
             db.SaveChanges();
 
             return Ok(autores);

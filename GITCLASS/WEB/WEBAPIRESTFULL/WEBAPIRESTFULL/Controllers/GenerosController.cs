@@ -93,12 +93,14 @@ namespace WEBAPIRESTFULL.Controllers
         public IHttpActionResult DeleteGeneros(int id)
         {
             Generos generos = db.Generos.Find(id);
+
             if (generos == null)
             {
                 return NotFound();
             }
 
-            generos.Ativo = false;
+            db.Generos.Find(id).Ativo = false;
+
             db.SaveChanges();
 
             return Ok(generos);

@@ -51,9 +51,6 @@ namespace WEBAPIRESTFULL.Controllers
                 return BadRequest();
             }
 
-            livros.UsuInc = 1;
-            livros.UsuAlt = 1;
-
             db.Entry(livros).State = EntityState.Modified;
 
             try
@@ -85,8 +82,6 @@ namespace WEBAPIRESTFULL.Controllers
                     return BadRequest(ModelState);
             }
 
-            livros.UsuAlt = 1;
-            livros.UsuInc = 1;
             db.Livros.Add(livros);
             db.SaveChanges();
 
@@ -98,12 +93,14 @@ namespace WEBAPIRESTFULL.Controllers
         public IHttpActionResult DeleteLivros(int id)
         {
             Livros livros = db.Livros.Find(id);
+
             if (livros == null)
             {
                 return NotFound();
             }
 
-            livros.Ativo = false;
+            db.Livros.Find(id).Ativo = false;
+
             db.SaveChanges();
 
             return Ok(livros);

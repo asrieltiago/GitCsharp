@@ -4,6 +4,7 @@ namespace WEBAPIRESTFULL.Models
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using WEBAPIRESTFULL.Utils;
 
     public partial class BibliotecaContextDB : DbContext
     {
@@ -42,6 +43,8 @@ namespace WEBAPIRESTFULL.Models
                 .Property(e => e.Descricao)
                 .IsUnicode(false);
 
+
+
             modelBuilder.Entity<Generos>()
                 .Property(e => e.Tipo)
                 .IsUnicode(false);
@@ -49,6 +52,7 @@ namespace WEBAPIRESTFULL.Models
             modelBuilder.Entity<Generos>()
                 .Property(e => e.Descricao)
                 .IsUnicode(false);
+
 
             modelBuilder.Entity<Livros>()
                 .Property(e => e.Titulo)
@@ -59,7 +63,7 @@ namespace WEBAPIRESTFULL.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Livros>()
-                .Property(e => e.Observacao)
+                .Property(e => e.Observacoes)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Livros>()

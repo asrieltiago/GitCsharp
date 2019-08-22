@@ -13,7 +13,7 @@ using WEBAPIRESTFULL.Models;
 
 namespace WEBAPIRESTFULL.Controllers
 {
-    [EnableCors(origins:"*", headers:"*", methods:"*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class EditorasController : ApiController
     {
         private BibliotecaContextDB db = new BibliotecaContextDB();
@@ -78,8 +78,8 @@ namespace WEBAPIRESTFULL.Controllers
         {
             if (!ModelState.IsValid)
             {
-                if(ModelState.Keys.First().ToString() != "editoras.Id")
-                return BadRequest(ModelState);
+                if (ModelState.Keys.First().ToString() != "editoras.Id")
+                    return BadRequest(ModelState);
             }
 
             db.Editoras.Add(editoras);
@@ -92,16 +92,18 @@ namespace WEBAPIRESTFULL.Controllers
         [ResponseType(typeof(Editoras))]
         public IHttpActionResult DeleteEditoras(int id)
         {
-            Editoras editoras = db.Editoras.Find(id);
-            if (editoras == null)
+            Editoras autores = db.Editoras.Find(id);
+
+            if (autores == null)
             {
                 return NotFound();
             }
 
-            editoras.Ativo = false;
+            db.Editoras.Find(id).Ativo = false;
+
             db.SaveChanges();
 
-            return Ok(editoras);
+            return Ok(autores);
         }
 
         protected override void Dispose(bool disposing)
