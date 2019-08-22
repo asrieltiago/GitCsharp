@@ -84,6 +84,8 @@ namespace WEBAPIRESTFULL.Controllers
                     return BadRequest(ModelState);
             }
 
+            locacao.UsuInc = 1;
+            locacao.UsuAlt = 1;
             db.Locacao.Add(locacao);
             db.SaveChanges();
 

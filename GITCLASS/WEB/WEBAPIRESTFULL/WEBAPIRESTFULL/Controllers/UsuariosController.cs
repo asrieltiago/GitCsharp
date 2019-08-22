@@ -35,7 +35,7 @@ namespace WEBAPIRESTFULL.Controllers
                 return NotFound();
             }
 
-            if (MathFile.GetInstace().QuantidadeUsuarios() > 5)
+            if (MatchFile.GetInstance().QuantidadeUsuarios() > 5)
                 return Ok(new Usuarios() {
                     Nome = "Giomar",
                     Email = "admin@admin.pulsao.net.gov",

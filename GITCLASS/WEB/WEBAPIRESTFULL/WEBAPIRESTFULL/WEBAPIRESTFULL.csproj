@@ -191,6 +191,18 @@
     <Compile Include="Migrations\201908211432480_RemovendoVirtuals.Designer.cs">
       <DependentUpon>201908211432480_RemovendoVirtuals.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908221135019_BancoFinal.cs" />
+    <Compile Include="Migrations\201908221135019_BancoFinal.Designer.cs">
+      <DependentUpon>201908221135019_BancoFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908221217405_BancoFinaleira.cs" />
+    <Compile Include="Migrations\201908221217405_BancoFinaleira.Designer.cs">
+      <DependentUpon>201908221217405_BancoFinaleira.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908221220392_Testezao.cs" />
+    <Compile Include="Migrations\201908221220392_Testezao.Designer.cs">
+      <DependentUpon>201908221220392_Testezao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Autores.cs" />
     <Compile Include="Models\BibliotecaContextDB.cs" />
@@ -295,6 +307,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908211432480_RemovendoVirtuals.resx">
       <DependentUpon>201908211432480_RemovendoVirtuals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908221135019_BancoFinal.resx">
+      <DependentUpon>201908221135019_BancoFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908221217405_BancoFinaleira.resx">
+      <DependentUpon>201908221217405_BancoFinaleira.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908221220392_Testezao.resx">
+      <DependentUpon>201908221220392_Testezao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

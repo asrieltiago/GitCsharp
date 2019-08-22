@@ -50,7 +50,6 @@ jQuery(document).ready(function(){
       $.each(form,function(index,value){
             $('[name=\''+ value.name +'\']').val("");
       });
-
     });
 });
 

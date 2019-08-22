@@ -1,28 +1,11 @@
-/* Ao carregar o documento o mesmo inicia o conteudo desde script*/
+var livrosList;
+var usuariosList;
+
 jQuery(document).ready(function () {
-	jQuery('#bntCancelar').click(function () {
-		$('#bntCancelar').hide();
-
-		$('#Id').val("");
-		$('#Livro').val("");
-		$('#Usuario').val("");
-		$('#Tipo').val("");
-		$('#Devolucao').val("");
-		$('#Ativo select').val("true");
-
-	});
-	GetMethod(null);
-});
-
-function GetByID(id) {
-	//$('#bntSubmit').hide();
-	//$('#bntSalvar').show();
-	$('#bntCancelar').show();
-
 	var settings = {
 		"async": true,
 		"crossDomain": true,
-		"url": "http://localhost:59271/Api/Locacao/" + id,
+		"url": "http://localhost:59271/Api/Livros",
 		"method": "GET",
 		"headers": {
 			"Content-Type": "application/json",
@@ -31,15 +14,34 @@ function GetByID(id) {
 	}
 
 	$.ajax(settings).done(function (response) {
-		$('#Id').val(response.Id);
-		$('#Livro').val(response.Livro);
-		$('#Usuario').val(response.Usuario);
-		$('#Tipo').val(response.Tipo);
-		$('#Devolucao').val(response.Devolucao);
-		$('#Ativo select').val(response.Ativo);
+		livrosList = response;
+
+		$.each(response, function (index, value) {
+			$('#Livro')[0].innerHTML += '<option value=\'' + value.Id + '\'>' + value.Titulo + '</option>';
+		});
 	});
 
-}
+	settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": "http://localhost:59271/Api/Usuarios",
+		"method": "GET",
+		"headers": {
+			"Content-Type": "application/json",
+			"Accept": "*/*"
+		}
+	}
+
+	$.ajax(settings).done(function (response) {
+		usuariosList = response;
+
+		$.each(response, function (index, value) {
+			$('#Usuario')[0].innerHTML += '<option value=\'' + value.Id + '\'>' + value.Nome + '</option>';
+		});
+	});
+
+	GetMethod(null);
+});
 
 function GetMethod(object) {
 	var settings = {
@@ -60,6 +62,17 @@ function GetMethod(object) {
 	return false;
 }
 
+function translateField(fieldValue, listTranslate, toValue) {
+    var retorno;
+
+    $.each(listTranslate, function (index, value) {
+        if (value.Id == fieldValue)
+            retorno = value[toValue];
+    });
+
+    return retorno;
+}
+
 function RefreshGrid(contentValue) {
 	$('#tDataGrid').empty();
 	$('#tDataGrid').html('<tbody>'
@@ -77,8 +90,8 @@ function RefreshGrid(contentValue) {
 	$.each(contentValue, function (index, value) {
 		var row = '<tr>'
 			+ '<td>' + value.Id + '</td>'
-			+ '<td>' + value.Livro + '</td>'
-			+ '<td>' + value.Usuario + '</td>'
+			+ '<td>' + translateField(value.Livro, livrosList, 'Titulo') + '</td>'
+            + '<td>' + translateField(value.Usuario, usuariosList, 'Nome') + '</td>'
 			+ '<td>' + value.Tipo + '</td>'
 			+ '<td>' + value.Devolucao + '</td>'
 			+ '<td>' + value.Ativo + '</td>'
@@ -86,9 +99,9 @@ function RefreshGrid(contentValue) {
 			+ '<div    class=\'col-md-12\' style=\'float: right;\'>'
 			+ '<div    class=\'col-md-6\'>'
 			+ '<button class=\'btn btn-block btn-danger col-md-3 btn-delet-event\' type=\'button\' send-post=\'Locacao\'  value=\'' + value.Id + '\'>Remover</button>'
-			+ '</div>'
-			+ '<div     class=\'col-md-6\'>'
-			+ '<button  class=\'btn btn-block btn-success col-md-3 btn-editing-event\' send-post=\'Locacao\' value=\'' + value.Id + '\' type=\'button\'\>Editar</button>'
+            + '</div>'
+            + '<div     class=\'col-md-6\'>'
+            + '<button  class=\'btn btn-block btn-success col-md-3 btn-editing-event\' send-post=\'Locacao\' value=\'' + value.Id + '\' type=\'button\'\>Editar</button>'
 			+ '</div>'
 			+ '</div>'
 			+ '</td>'

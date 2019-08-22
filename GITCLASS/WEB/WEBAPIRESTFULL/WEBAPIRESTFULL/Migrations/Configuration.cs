@@ -9,7 +9,7 @@ namespace WEBAPIRESTFULL.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(WEBAPIRESTFULL.Models.BibliotecaContextDB context)
