@@ -43,7 +43,19 @@ namespace RevisaoWEBApi.Models
                         }
 
                     case ValidFields.ValidaEmail:
-                        return ValidarEmail(value, validationContext.DisplayName);
+                        {
+                            Usuario user = dB.usuarios.FirstOrDefault(x => x.Email == value.ToString());
+
+                            if (user == null)
+                            {
+                                return ValidarEmail(value, validationContext.DisplayName);
+
+                            }
+                            else
+                            {
+                                return new ValidationResult("O email informado já existe.");
+                            }
+                        }                                               
 
                     case ValidFields.ValidaSenha:
                         return ValidarSenha(value, validationContext.DisplayName);

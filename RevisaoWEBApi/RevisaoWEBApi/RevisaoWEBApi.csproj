@@ -175,6 +175,10 @@
     <Compile Include="Migrations\201908231318134_Primeiro.Designer.cs">
       <DependentUpon>201908231318134_Primeiro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908231952460_Segundo.cs" />
+    <Compile Include="Migrations\201908231952460_Segundo.Designer.cs">
+      <DependentUpon>201908231952460_Segundo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContextDB.cs" />
     <Compile Include="Models\CustomValidFields.cs" />
@@ -272,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908231318134_Primeiro.resx">
       <DependentUpon>201908231318134_Primeiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908231952460_Segundo.resx">
+      <DependentUpon>201908231952460_Segundo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
