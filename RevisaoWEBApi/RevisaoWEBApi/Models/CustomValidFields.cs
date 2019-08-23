@@ -19,24 +19,38 @@ namespace RevisaoWEBApi.Models
             typeField = type;
         }
 
-        
+
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             //Se o valor não for nulo
-            if(value != null)
+            if (value != null)
             {
                 switch (typeField)
                 {
                     case ValidFields.ValidaLogin:
-                        
-                        break;
+                        {
+                            Usuario user = dB.usuarios.FirstOrDefault(x => x.Login == value.ToString());
+
+                            if (user == null)
+                            {
+                                return ValidarLogin(value, validationContext.DisplayName);
+
+                            }
+                            else
+                            {
+                                return new ValidationResult("O login informado já existe.");
+                            }
+                        }
+
                     case ValidFields.ValidaEmail:
-                        return ValidarEmail(value, validationContext.DisplayName);   
+                        return ValidarEmail(value, validationContext.DisplayName);
 
                     case ValidFields.ValidaSenha:
-                        break;
+                        return ValidarSenha(value, validationContext.DisplayName);
+
                     case ValidFields.ValidaNome:
-                        break;
+                        return ValidarNome(value, validationContext.DisplayName);
+
                     default:
                         break;
                 }
@@ -58,6 +72,39 @@ namespace RevisaoWEBApi.Models
                 return ValidationResult.Success;
 
             return new ValidationResult($"O campo {displayField} é inválido.");
+        }
+
+        private ValidationResult ValidarNome(object value, string displayField)
+        {
+            bool result = Regex.IsMatch(value.ToString(), @"^[A-Za-zÀ-ú]+ [A-Za-zÀ-ú]+$");
+
+            if (result)
+                return ValidationResult.Success;
+
+            return new ValidationResult($"O campo {displayField} é inválido.");
+        }
+
+        private ValidationResult ValidarLogin(object value, string displayField)
+        {
+            bool result = Regex.IsMatch(value.ToString(), @"^(?![_ -])(?:(?![_ -]{2})[\w -]){8,16}(?<![_ -])$");
+
+            if (result)
+                return ValidationResult.Success;
+
+            return new ValidationResult($"O campo {displayField} é inválido. ");
+        }
+
+        private ValidationResult ValidarSenha(object value, string displayField)
+        {
+            bool result = Regex.IsMatch(value.ToString(), @"^(?:(?=.*?\p{N})(?=.*?[\p{S}\p{P} ])(?=.*?\p{Lu})(?=.*?\p{Ll}))[^\p{C}]{8,16}$");   
+
+            if (result)
+                return ValidationResult.Success;
+
+            return new ValidationResult($"O campo {displayField} é inválido." +
+                $"O mesmo precisa conter ao menos: \n " +
+                $"1 Caractere Especial, 1 Letra Maiúscula, " +
+                $"1 Número e entre 8 à 16 caracteres.");
         }
     }
 }

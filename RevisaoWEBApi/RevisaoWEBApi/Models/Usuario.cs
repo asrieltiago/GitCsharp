@@ -18,11 +18,13 @@ namespace RevisaoWEBApi.Models
         public string Email { get; set; }
 
         [CustomValidFields(Enums.ValidFields.ValidaLogin)]
+        [MaxLength(16, ErrorMessage = "O campo excedeu o limite de 16 caracteres.")]
+        [MinLength(8, ErrorMessage = "O campo não atende a quantidade minima de 8 caracteres.")]
         public string Login { get; set; }
 
         [CustomValidFields(Enums.ValidFields.ValidaSenha)]
-        [MaxLength(16,ErrorMessage = "O campo excedeu o limite de caracteres \"16\".")]
-        [MinLength(8, ErrorMessage = "O campo não atende a quantidade minima de caracteres \"8\".")]
+        [MaxLength(16, ErrorMessage = "O campo excedeu o limite de 16 caracteres.")]
+        [MinLength(8, ErrorMessage = "O campo não atende a quantidade minima de 8 caracteres.")]
         public string Senha { get; set; }
 
     }
